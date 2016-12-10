@@ -2,8 +2,8 @@
    v Movement     (Keys) (WASD - ARROWS)
    v Direction   (Mouse) (Movement)
    - Action
-    - Stunner   (Mouse2) 
-	- Shooter   (Mouse1)
+    v Stunner   (Mouse2) 
+	v Shooter   (Mouse1)
 	v Grab           (E)
 	- Order          (Q)
   
