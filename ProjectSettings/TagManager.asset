@@ -13,19 +13,19 @@ TagManager:
   - UI
   - 
   - 
+  - InteractibleObjects
+  - StaticObjects
+  - 
+  - Enemies
+  - EnemyProjctiles
+  - 
+  - PlayerAllies
+  - PlayerProjectiles
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grabber
   - 
   - 
   - 
