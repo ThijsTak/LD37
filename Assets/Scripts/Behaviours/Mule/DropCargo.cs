@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Core;
 using UnityEngine;
 
 namespace Behaviours.Mule
@@ -17,6 +18,7 @@ namespace Behaviours.Mule
 				return true;
 			}
 
+			GlobalManager.Instance.FinishOrder(mule.Cargo);
 			mule.Cargo.body.useGravity = true;
 			mule.Cargo = null;
 			return true;

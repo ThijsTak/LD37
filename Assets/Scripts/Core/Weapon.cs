@@ -26,7 +26,7 @@ namespace Core
 
 		public void Init(BaseUnit unit)
 		{
-			rof = ShotsPerMinute / 60;
+			rof = 60 / ShotsPerMinute;
 			owner = unit;
 		}
 
@@ -41,13 +41,13 @@ namespace Core
 			{
 				return;
 			}
-			
+
 			Timer = 0;
 
 			ProjectileSpawner.SpawnProjectile(
 				ProjectilePrefab,
 				ShotPoint.transform.position,
-				owner.transform.rotation.eulerAngles,
+				(owner.gameObject.transform.rotation * Vector3.forward),
 				ProjectileSpeed,
 				Power,
 				Type);

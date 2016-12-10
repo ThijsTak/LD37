@@ -45,6 +45,9 @@ namespace Units
 			{
 				defaultDrag = body.drag;
 			}
+
+			Stunner.Init(this);
+			Blaster.Init(this);
 		}
 
 		/// <summary>

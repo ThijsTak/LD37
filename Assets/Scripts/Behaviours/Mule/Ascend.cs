@@ -15,10 +15,10 @@ namespace Assets.Scripts.Behaviours.Mule
 		public override bool Update(Units.Mule mule)
 		{
 			// Move towards the target.
-			float dir = mule.transform.position.y - GlobalManager.Instance.Settings.MuleFlyHeight;
+			// float dir = mule.transform.position.y - GlobalManager.Instance.Settings.MuleFlyHeight;
 
 			// Are we there yet?
-			if (dir <= GlobalManager.Instance.Settings.MuleFlyHeight)
+			if (mule.transform.position.y >= GlobalManager.Instance.Settings.MuleFlyHeight)
 			{
 				mule.Body.velocity = Vector3.zero;
 				mule.transform.position = new Vector3(mule.transform.position.x,
@@ -35,7 +35,7 @@ namespace Assets.Scripts.Behaviours.Mule
 
 		public override void Abort()
 		{
-			throw new NotImplementedException();
+			
 		}
 
 		#endregion

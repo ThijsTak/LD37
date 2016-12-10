@@ -12,6 +12,7 @@ namespace Core
 		public static GlobalManager Instance;
 		public Base Home;
 		Queue<Draggable> muleOrderQueue = new Queue<Draggable>();
+		List<Draggable> assignedItems = new List<Draggable>();
 		public BasicSettings Settings = new BasicSettings();
 		List<Mule> mules = new List<Mule>(10);
 
@@ -33,7 +34,7 @@ namespace Core
 
 		public void AddToQueue(Draggable item)
 		{
-			if (muleOrderQueue.Any(a => item.GetInstanceID() == a.GetInstanceID()))
+			if (muleOrderQueue.Contains(item) || assignedItems.Contains(item))
 			{
 				return;
 			}
@@ -52,6 +53,14 @@ namespace Core
 			return null;
 		}
 
+		public void FinishOrder(Draggable item)
+		{
+			if (assignedItems.Contains(item))
+			{
+				assignedItems.Remove(item);
+			}
+		}
+
 		void AssignOrders()
 		{
 			while (muleOrderQueue.Count > 0)
@@ -63,12 +72,16 @@ namespace Core
 						continue;
 					}
 
-					CollectObjectOrderHelper.CreateOrder(mule, GetFromQueue(), Home);
-					continue;
+					var item = GetFromQueue();
+					CollectObjectOrderHelper.CreateOrder(mule, item, Home);
+					assignedItems.Add(item);
+					return;
 				}
 
 				return;
 			}
 		}
+
+
 	}
 }
