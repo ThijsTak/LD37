@@ -69,16 +69,17 @@ namespace Units
 				ShootWeapon();
 			}
 
-			if (Input.GetButton("Grab"))
+			if (Input.GetButtonDown("Grab"))
 			{
 				ActivateGrab();
 			}
 
-			if (Input.GetButton("Order"))
+			if (Input.GetButtonDown("Order"))
 			{
 				ActivateOrder();
 			}
 
+			UpdateTractor();
 		}
 
 		void ShootStunner()
@@ -101,7 +102,7 @@ namespace Units
 			}
 
 			// Get all objects in range of the grabber.
-			Collider[] objects = Physics.OverlapSphere(transform.position, TractorSystem.Radius, LayerHelper.Grabber);
+			Collider[] objects = Physics.OverlapSphere(transform.position, TractorSystem.Radius);
 			if (objects == null)
 			{
 				return;
