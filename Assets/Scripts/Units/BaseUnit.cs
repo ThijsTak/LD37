@@ -27,5 +27,10 @@ namespace Units
 		{
 
 		}
+
+		public virtual void DrainEnergy(float energy)
+		{
+			
+		}
 	}
 }

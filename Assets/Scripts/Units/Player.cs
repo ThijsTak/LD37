@@ -13,19 +13,20 @@ namespace Units
 	[RequireComponent(typeof(Rigidbody))]
 	public class Player : BaseUnit
 	{
-		[SerializeField]
-		MinMaxValue Energy = new MinMaxValue();
-
-		[SerializeField]
-		TractorSystem TractorSystem = new TractorSystem();
-
-		private float movementMultiplier = 2.0f;
-		private float defaultDrag = 0;
+		[SerializeField] MinMaxValue Energy = new MinMaxValue();
+		[SerializeField] TractorSystem TractorSystem = new TractorSystem();
+		[SerializeField] private Weapon Stunner;
+		[SerializeField] private Weapon Blaster;
+		[SerializeField] private float movementMultiplier = 2.0f;
+		[SerializeField] private float defaultDrag = 0;
 
 		// Prefetched components.
 		private Rigidbody body;
 		private LineRenderer tractorLine;
 
+		/// <summary>
+		/// Initialize this instance.
+		/// </summary>
 		void Start()
 		{
 			body = GetComponent<Rigidbody>();
@@ -46,11 +47,34 @@ namespace Units
 			}
 		}
 
+		/// <summary>
+		/// Updates this pixels.
+		/// </summary>
+		void Update()
+		{
+			// Update the weapons.
+			if (Blaster != null)
+			{
+				Blaster.Update(Time.deltaTime);
+			}
+
+			if (Stunner != null)
+			{
+				Stunner.Update(Time.deltaTime);
+			}
+		}
+
+		/// <summary>
+		/// Fixed update step (physics update)
+		/// </summary>
 		void FixedUpdate()
 		{
 			UpdateInput();
 		}
 
+		/// <summary>
+		/// Handle the user input.
+		/// </summary>
 		void UpdateInput()
 		{
 			Vector3 p = transform.position;
@@ -94,7 +118,10 @@ namespace Units
 		/// </summary>
 		void ShootStunner()
 		{
-
+			if (Stunner != null)
+			{
+				Stunner.Shoot();
+			}
 		}
 
 		/// <summary>
@@ -102,7 +129,10 @@ namespace Units
 		/// </summary>
 		void ShootWeapon()
 		{
-
+			if (Blaster != null)
+			{
+				Blaster.Shoot();
+			}
 		}
 
 		/// <summary>
@@ -123,7 +153,6 @@ namespace Units
 			{
 				return;
 			}
-
 
 			Vector3 p = MouseHelper.GetMousePosition();
 			foreach (Collider o in objects)
