@@ -1,10 +1,10 @@
  - Basic player control
    v Movement     (Keys) (WASD - ARROWS)
-   - Direction   (Mouse) (Movement)
+   v Direction   (Mouse) (Movement)
    - Action
     - Stunner   (Mouse2) 
 	- Shooter   (Mouse1)
-	- Grab           (E)
+	v Grab           (E)
 	- Order          (Q)
   
  - GameState
@@ -13,9 +13,9 @@
   - Dialogs
   
  - Grabbable objects
-  - Grab script
-  - Dragging
-  - Weight/Speed reduction
-  - Grab beam
+  v Grab script
+  v Dragging
+  ~ Weight/Speed reduction
+  v Grab beam
  
  

@@ -17,5 +17,7 @@ namespace Core
 
 		[SerializeField]
 		public bool Active = false;
+
+		public Rigidbody TracRigidbody = null;
 	}
 }

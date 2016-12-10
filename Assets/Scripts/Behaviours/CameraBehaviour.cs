@@ -17,7 +17,7 @@ namespace Assets.Scripts.Behaviours
 
 		public void Start()
 		{
-
+			zoom = transform.position.y;
 		}
 
 		public void Update()
