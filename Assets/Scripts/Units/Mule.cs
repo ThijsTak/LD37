@@ -24,7 +24,10 @@ namespace Units
 
 		public void Update()
 		{
-
+			if (Body.velocity.x != 0 && Body.velocity.z != 0)
+			{
+				transform.rotation = Quaternion.LookRotation(new Vector3(Body.velocity.x, 0, Body.velocity.z));
+			}
 		}
 
 		public void FixedUpdate()

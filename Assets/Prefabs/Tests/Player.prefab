@@ -396,20 +396,22 @@ MonoBehaviour:
   Stunner:
     Power: 1
     EnergyPerShot: 0.25
-    ProjectileSpeed: 15
-    ShotPoint: {fileID: 0}
-    ProjectilePrefab: {fileID: 0}
+    ProjectileSpeed: 50
+    ShotPoint: {fileID: 4606701160098112}
+    ProjectilePrefab: {fileID: 1004022033393520, guid: 930c6da5aa5b16345a9132fc3962bb25,
+      type: 2}
     Type: 0
-    ShotsPerMinute: 0
+    ShotsPerMinute: 30
     Timer: 0
   Blaster:
     Power: 1
     EnergyPerShot: 0.25
-    ProjectileSpeed: 15
-    ShotPoint: {fileID: 0}
-    ProjectilePrefab: {fileID: 0}
+    ProjectileSpeed: 75
+    ShotPoint: {fileID: 4606701160098112}
+    ProjectilePrefab: {fileID: 1737101786463660, guid: 2f4e9e78a8c8e624eb79fc5650500ab1,
+      type: 2}
     Type: 0
-    ShotsPerMinute: 0
+    ShotsPerMinute: 120
     Timer: 0
   movementMultiplier: 2
   defaultDrag: 0
