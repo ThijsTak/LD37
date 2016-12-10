@@ -22,10 +22,17 @@ namespace Units
 
 		// Prefetched components.
 		private Rigidbody body;
+		private LineRenderer tractorLine;
 
 		void Start()
 		{
 			body = GetComponent<Rigidbody>();
+			if (body == null)
+			{
+				Debug.LogError("No body found for player object.");
+			}
+
+			tractorLine = GetComponent<LineRenderer>();
 			if (body == null)
 			{
 				Debug.LogError("No body found for player object.");
@@ -110,9 +117,16 @@ namespace Units
 					continue;
 				}
 
-
+				TractorSystem.Active = true;
+				TractorSystem.Target = drag.gameObject.transform;
 			}
-			
+		}
+
+		void UpdateTractor()
+		{
+			tractorLine.enabled = TractorSystem.Active;
+			tractorLine.SetPosition(0, transform.position);
+			tractorLine.SetPosition(1, TractorSystem.Target != null ? TractorSystem.Target.position : transform.position);
 		}
 
 		void ActivateOrder()
