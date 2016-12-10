@@ -11,7 +11,7 @@ namespace Behaviours.Mule
 	{
 		public GotoPoint()
 		{
-			
+
 		}
 
 		public GotoPoint(Transform target)
@@ -26,27 +26,30 @@ namespace Behaviours.Mule
 		public override bool Update(Units.Mule mule)
 		{
 			// Move towards the target.
-			var dir = Vector3.Distance(Target.position, mule.transform.position);
+			Vector3 v = new Vector3(Target.position.x,
+						mule.transform.position.y,
+						Target.position.z);
+
+			float dir = Vector3.Distance(v, mule.transform.position);
 
 			// Are we there yet?
-			if (dir <= mule.Speed)
+			if (dir <= mule.Speed * Time.fixedDeltaTime)
 			{
 				mule.Body.velocity = Vector3.zero;
-				mule.transform.position = new Vector3(mule.transform.position.x,
-					GlobalManager.Instance.Settings.MuleFlyHeight, mule.transform.position.z);
-
+				mule.transform.position = new Vector3(Target.position.x, mule.transform.position.y, Target.position.z);
 				return true;
 			}
 			else
 			{
-				mule.Body.velocity = new Vector3(0, GlobalManager.Instance.Settings.MuleAscentSpeed, 0);
+				Vector3 vvx = (v - mule.transform.position).normalized * mule.Speed;
+				mule.Body.velocity = new Vector3(vvx.x, 0, vvx.z);
 				return false;
 			}
 		}
 
 		public override void Abort()
 		{
-			
+
 		}
 
 		#endregion

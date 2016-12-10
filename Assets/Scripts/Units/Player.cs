@@ -199,7 +199,27 @@ namespace Units
 		/// </summary>
 		void ActivateOrder()
 		{
+			// Replace this with another radius.
+			float radius = 10.0f;
+			Vector3 p = MouseHelper.GetMousePosition();
 
+			// Get all objects in range of the grabber.
+			Collider[] objects = Physics.OverlapSphere(p, radius);
+			if (objects == null)
+			{
+				return;
+			}
+
+			foreach (Collider o in objects)
+			{
+				Draggable drag = o.GetComponent<Draggable>();
+				if (drag == null)
+				{
+					continue;
+				}
+
+				GlobalManager.Instance.AddToQueue(drag);
+			}
 		}
 	}
 }

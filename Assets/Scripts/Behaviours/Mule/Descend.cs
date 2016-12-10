@@ -10,6 +10,16 @@ namespace Assets.Scripts.Behaviours.Mule
 {
 	class Descend : BehaviourState
 	{
+		public Descend()
+		{
+			
+		}
+
+		public Descend(float descendHeight)
+		{
+			DescendHeight = descendHeight;
+		}
+
 		public float DescendHeight = 0.0f;
 
 		#region Overrides of BehaviourState
@@ -20,7 +30,7 @@ namespace Assets.Scripts.Behaviours.Mule
 			float dir = mule.transform.position.y - DescendHeight;
 
 			// Are we there yet?
-			if (dir <= GlobalManager.Instance.Settings.MuleDescentSpeed)
+			if (dir <= GlobalManager.Instance.Settings.MuleDescentSpeed * Time.fixedDeltaTime)
 			{
 				mule.Body.velocity = Vector3.zero;
 				mule.transform.position = new Vector3(mule.transform.position.x, 
@@ -30,7 +40,7 @@ namespace Assets.Scripts.Behaviours.Mule
 			}
 			else
 			{
-				mule.Body.velocity = new Vector3(0, GlobalManager.Instance.Settings.MuleDescentSpeed, 0);
+				mule.Body.velocity = new Vector3(0, -GlobalManager.Instance.Settings.MuleDescentSpeed, 0);
 				return false;
 			}
 		}

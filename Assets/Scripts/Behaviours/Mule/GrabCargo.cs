@@ -6,6 +6,16 @@ namespace Behaviours.Mule
 {
 	public class GrabCargo : BehaviourState
 	{
+		public GrabCargo()
+		{
+
+		}
+
+		public GrabCargo(Draggable target)
+		{
+			Target = target;
+		}
+
 		/// <summary>
 		/// The target to pick up.
 		/// </summary>
