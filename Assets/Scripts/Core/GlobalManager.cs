@@ -2,11 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Core;
+using UnityEngine;
 
-namespace Assets.Scripts.Core
+namespace Core
 {
-	public class GlobalManager
+	public class GlobalManager : MonoBehaviour
 	{
+		public static GlobalManager Instance;
 
+		public BasicSettings Settings = new BasicSettings();
+
+		public void Start()
+		{
+			Instance = this;
+		}
 	}
 }
