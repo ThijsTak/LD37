@@ -19,6 +19,8 @@ namespace Units
 		[SerializeField]
 		TractorSystem TractorSystem = new TractorSystem();
 
+		private float movementMultiplier = 2.0f;
+		private float defaultDrag = 0;
 
 		// Prefetched components.
 		private Rigidbody body;
@@ -37,6 +39,11 @@ namespace Units
 			{
 				Debug.LogError("No body found for player object.");
 			}
+
+			if (defaultDrag == 0)
+			{
+				defaultDrag = body.drag;
+			}
 		}
 
 		void FixedUpdate()
@@ -50,7 +57,7 @@ namespace Units
 
 			// Update speed.
 			Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-			body.velocity += movement;
+			body.velocity += movement * movementMultiplier;
 
 			// Get the mouse position relative to the camera.
 			Vector3 hitPoint = MouseHelper.GetMousePosition() - new Vector3(p.x, 0, p.z);
@@ -82,16 +89,25 @@ namespace Units
 			UpdateTractor();
 		}
 
+		/// <summary>
+		/// Shoots the stunner.
+		/// </summary>
 		void ShootStunner()
 		{
-			
+
 		}
 
+		/// <summary>
+		/// Shoots the weapon.
+		/// </summary>
 		void ShootWeapon()
 		{
-			
+
 		}
 
+		/// <summary>
+		/// Activates the tractor beam.
+		/// </summary>
 		void ActivateGrab()
 		{
 			if (TractorSystem.Active)
@@ -120,19 +136,41 @@ namespace Units
 
 				TractorSystem.Active = true;
 				TractorSystem.Target = drag.gameObject.transform;
+				TractorSystem.TracRigidbody = drag.gameObject.GetComponent<Rigidbody>();
 			}
 		}
 
+		/// <summary>
+		/// Updates the tractor beam.
+		/// </summary>
 		void UpdateTractor()
 		{
 			tractorLine.enabled = TractorSystem.Active;
 			tractorLine.SetPosition(0, transform.position);
 			tractorLine.SetPosition(1, TractorSystem.Target != null ? TractorSystem.Target.position : transform.position);
+
+
+			if (TractorSystem.Active)
+			{
+				float dist = Vector3.Distance(transform.position, TractorSystem.Target.position);
+
+				if (dist > TractorSystem.Radius)
+				{
+					var direction = (transform.position - TractorSystem.Target.position).normalized;
+					TractorSystem.TracRigidbody.velocity = direction * TractorSystem.Power;
+					body.drag = defaultDrag + (transform.position - TractorSystem.Target.position).sqrMagnitude;
+					return;
+				}
+			}
+			body.drag = defaultDrag;
 		}
 
+		/// <summary>
+		/// Activates the order.
+		/// </summary>
 		void ActivateOrder()
 		{
-			
+
 		}
 	}
 }
