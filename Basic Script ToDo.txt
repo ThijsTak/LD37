@@ -1,0 +1,21 @@
+ - Basic player control
+   v Movement     (Keys) (WASD - ARROWS)
+   - Direction   (Mouse) (Movement)
+   - Action
+    - Stunner   (Mouse2) 
+	- Shooter   (Mouse1)
+	- Grab           (E)
+	- Order          (Q)
+  
+ - GameState
+  - Robot control
+  - Ship menu control
+  - Dialogs
+  
+ - Grabbable objects
+  - Grab script
+  - Dragging
+  - Weight/Speed reduction
+  - Grab beam
+ 
+ 
