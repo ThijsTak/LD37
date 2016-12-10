@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Units;
 
-namespace Assets.Scripts.Behaviours.Mule
+namespace Behaviours.Mule
 {
 	public abstract class BehaviourState
 	{
