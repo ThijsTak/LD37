@@ -23,3 +23,9 @@
    v Perform order action.
    v Add order to orders queue.
    v Assign order to Mule
+   
+   
+
+ - Over the shoulder camera.
+ - Change movement of player to accell/rotate style.
+ - Add height fixer to all items.

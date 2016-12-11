@@ -19,6 +19,7 @@ namespace Units
 		[SerializeField] private Weapon Stunner;
 		[SerializeField] private Weapon Blaster;
 		[SerializeField] private float movementMultiplier = 2.0f;
+		[SerializeField] private float turnMultiplier = 0.5f;
 		[SerializeField] private float defaultDrag = 0;
 
 		// Prefetched components.
@@ -89,14 +90,9 @@ namespace Units
 			Vector3 p = transform.position;
 
 			// Update speed.
-			Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+			Vector3 movement = transform.rotation * (Vector3.forward * Input.GetAxis("Vertical"));
 			body.velocity += movement * movementMultiplier;
-
-			// Get the mouse position relative to the camera.
-			Vector3 hitPoint = MouseHelper.GetMousePosition() - new Vector3(p.x, 0, p.z);
-
-			// Now rotate the onbject towards the point.
-			gameObject.transform.rotation = Quaternion.LookRotation(hitPoint, Vector3.up);
+			transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * turnMultiplier);
 
 			// Now check the actions.
 			if (Input.GetButton("Stunner"))
@@ -129,7 +125,9 @@ namespace Units
 		{
 			if (Stunner != null)
 			{
-				Stunner.Shoot();
+				// Get the mouse position relative to the camera.
+				Vector3 hitPoint = MouseHelper.GetMousePosition() - new Vector3(transform.position.x, 0, transform.position.z);
+				Stunner.Shoot(hitPoint);
 			}
 		}
 
@@ -140,7 +138,8 @@ namespace Units
 		{
 			if (Blaster != null)
 			{
-				Blaster.Shoot();
+				Vector3 hitPoint = MouseHelper.GetMousePosition() - new Vector3(transform.position.x, 0, transform.position.z);
+				Blaster.Shoot(hitPoint);
 			}
 		}
 

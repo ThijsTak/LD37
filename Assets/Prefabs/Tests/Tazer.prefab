@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 54441884704239082}
   - component: {fileID: 65030014046965518}
   - component: {fileID: 114743432389391718}
+  - component: {fileID: 114072592713632846}
+  - component: {fileID: 114783064721005346}
   m_Layer: 15
   m_Name: Tazer
   m_TagString: Untagged
@@ -139,6 +141,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114072592713632846
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1004022033393520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141de6ae4683c4a46a89a86a199b64ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeInSeconds: 1.5
+  Message: Death
+  Repeat: 0
+  Enabled: 1
 --- !u!114 &114743432389391718
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,6 +169,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Power: 0
   Type: 0
+--- !u!114 &114783064721005346
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1004022033393520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7576c3ed326839243b0d173369601791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135042528319372256
 SphereCollider:
   m_ObjectHideFlags: 1
