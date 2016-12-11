@@ -68,6 +68,7 @@ namespace Units
 				Stunner.Update(Time.deltaTime);
 			}
 
+			// Set height.
 			transform.position = new Vector3(
 				transform.position.x,
 				HeightHelper.GetHeightFromTerrain(transform.position) + GlobalManager.Instance.Settings.PlayerHoverHeight,

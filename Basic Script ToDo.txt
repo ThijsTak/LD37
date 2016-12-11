@@ -26,6 +26,6 @@
    
    
 
- - Over the shoulder camera.
- - Change movement of player to accell/rotate style.
+ ~ Over the shoulder camera.
+ V Change movement of player to accell/rotate style.
  - Add height fixer to all items.

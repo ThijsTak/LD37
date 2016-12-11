@@ -32,5 +32,10 @@ namespace Units
 		{
 			
 		}
+
+		public virtual float GetEnergy()
+		{
+			return 0;
+		}
 	}
 }

@@ -25,6 +25,12 @@ namespace Units
 		public GameObject NavigationMesh;
 		public GameObject EnergyCodeMesh;
 
+		void Start()
+		{
+			// Register the base.
+			GlobalManager.Instance.Home = this;
+		}
+
 
 		public void AddEnergy(float amount)
 		{
