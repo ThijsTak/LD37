@@ -19,7 +19,7 @@ namespace Behaviours.Mule
 			}
 
 			GlobalManager.Instance.FinishOrder(mule.Cargo);
-			mule.Cargo.body.useGravity = true;
+			mule.Cargo.Transporter = null;
 			mule.Cargo = null;
 			return true;
 		}

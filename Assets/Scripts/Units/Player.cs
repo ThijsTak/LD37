@@ -145,6 +145,12 @@ namespace Units
 		{
 			if (TractorSystem.Active)
 			{
+				Collectable coll = TractorSystem.Target.gameObject.GetComponent<Collectable>();
+				if (coll != null)
+				{
+					coll.Transporter = null;
+				}
+
 				TractorSystem.Target = null;
 				TractorSystem.Active = false;
 				return;
@@ -160,7 +166,7 @@ namespace Units
 			Vector3 p = MouseHelper.GetMousePosition();
 			foreach (Collider o in objects)
 			{
-				Draggable drag = o.GetComponent<Draggable>();
+				Collectable drag = o.GetComponent<Collectable>();
 				if (drag == null)
 				{
 					continue;
@@ -169,6 +175,7 @@ namespace Units
 				TractorSystem.Active = true;
 				TractorSystem.Target = drag.gameObject.transform;
 				TractorSystem.TracRigidbody = drag.gameObject.GetComponent<Rigidbody>();
+				drag.Transporter = gameObject;
 			}
 		}
 
@@ -181,19 +188,26 @@ namespace Units
 			tractorLine.SetPosition(0, transform.position);
 			tractorLine.SetPosition(1, TractorSystem.Target != null ? TractorSystem.Target.position : transform.position);
 
-
 			if (TractorSystem.Active)
 			{
 				float dist = Vector3.Distance(transform.position, TractorSystem.Target.position);
 
+				var col = TractorSystem.Target.gameObject.GetComponent<Collectable>();
+				if (col != null && col.Transporter != gameObject)
+				{
+					ActivateGrab();
+					return;
+				}
+
 				if (dist > TractorSystem.Radius)
 				{
-					var direction = (transform.position - TractorSystem.Target.position).normalized;
+					Vector3 direction = (transform.position - TractorSystem.Target.position).normalized;
 					TractorSystem.TracRigidbody.velocity = direction * TractorSystem.Power;
-					body.drag = defaultDrag + (transform.position - TractorSystem.Target.position).sqrMagnitude;
+					body.drag = defaultDrag + ((transform.position - TractorSystem.Target.position).sqrMagnitude / TractorSystem.Power);
 					return;
 				}
 			}
+
 			body.drag = defaultDrag;
 		}
 
@@ -215,7 +229,7 @@ namespace Units
 
 			foreach (Collider o in objects)
 			{
-				Draggable drag = o.GetComponent<Draggable>();
+				Collectable drag = o.GetComponent<Collectable>();
 				if (drag == null)
 				{
 					continue;

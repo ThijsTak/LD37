@@ -9,7 +9,7 @@ namespace Helpers
 {
 	public static class CollectObjectOrderHelper
 	{
-		public static void CreateOrder(Units.Mule mule, Draggable target, Base home)
+		public static void CreateOrder(Units.Mule mule, Collectable target, Base home)
 		{
 			mule.Orders.Enqueue(new GotoPoint(target.transform));
 			mule.Orders.Enqueue(new Descend(target.transform.position.y));
