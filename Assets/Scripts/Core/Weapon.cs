@@ -35,7 +35,7 @@ namespace Core
 			Timer += deltaTime;
 		}
 
-		public void Shoot()
+		public void Shoot(Vector3 direction)
 		{
 			if (!(Timer >= rof))
 			{
@@ -47,7 +47,7 @@ namespace Core
 			ProjectileSpawner.SpawnProjectile(
 				ProjectilePrefab,
 				ShotPoint.transform.position,
-				(owner.gameObject.transform.rotation * Vector3.forward),
+				direction.normalized,
 				ProjectileSpeed,
 				Power,
 				Type);

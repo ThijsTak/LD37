@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680584424436332}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 87.82961, y: 0, z: 101.74579}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4234587971346650}
@@ -172,14 +172,15 @@ MonoBehaviour:
   Blaster:
     Power: 1
     EnergyPerShot: 0.25
-    ProjectileSpeed: 75
+    ProjectileSpeed: 100
     ShotPoint: {fileID: 4606701160098112}
     ProjectilePrefab: {fileID: 1737101786463660, guid: 2f4e9e78a8c8e624eb79fc5650500ab1,
       type: 2}
     Type: 0
-    ShotsPerMinute: 120
+    ShotsPerMinute: 240
     Timer: 0
-  movementMultiplier: 2
+  movementMultiplier: 3
+  turnMultiplier: 1.5
   defaultDrag: 0
 --- !u!120 &120094894593297822
 LineRenderer:
