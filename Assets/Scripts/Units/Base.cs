@@ -6,7 +6,6 @@ namespace Units
 	public class Base : BaseUnit
 	{
 		public Transform DropPoint = null;
-		public MinMaxValue Energy = new MinMaxValue();
 		public float StoredMass;
 
 		// Main Components:
@@ -29,17 +28,6 @@ namespace Units
 		{
 			// Register the base.
 			GlobalManager.Instance.Home = this;
-		}
-
-
-		public void AddEnergy(float amount)
-		{
-			Energy.ChangeValue(amount);
-		}
-
-		public void RemoveEnergy(float amount)
-		{
-			Energy.ChangeValue(-amount);
 		}
 
 		void OnTriggerEnter(Collider collider)

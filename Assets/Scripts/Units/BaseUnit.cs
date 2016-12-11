@@ -1,21 +1,11 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Behaviours;
+using Core;
+using UnityEngine;
 
 namespace Units
 {
-	public class BaseUnit : MonoBehaviour
+	public abstract class BaseUnit : MonoBehaviour
 	{
-		/// <summary>
-		/// Gets the position translated to the 2D plane.
-		/// </summary>
-		public Vector2 Position
-		{
-			get
-			{
-				return new Vector2(transform.position.x, transform.position.z);
-			}
-		}
-
-
 		// Use this for initialization
 		void Start()
 		{
@@ -28,14 +18,26 @@ namespace Units
 
 		}
 
-		public virtual void DrainEnergy(float energy)
+		public MinMaxValue Energy;
+
+		public void DrainEnergy(float energy)
 		{
-			
+			Energy.ChangeValue(-energy);
 		}
 
-		public virtual float GetEnergy()
+		public void AddEnergy(float energy)
 		{
-			return 0;
+			Energy.ChangeValue(energy);
+		}
+
+		public float GetEnergy()
+		{
+			return Energy.Current;
+		}
+
+		public float GetMaxEnegy()
+		{
+			return Energy.Max;
 		}
 	}
 }
