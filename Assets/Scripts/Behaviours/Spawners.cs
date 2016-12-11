@@ -59,7 +59,7 @@ namespace Behaviours
 
 			for (int i = 0; i < number; i++)
 			{
-				Vector3 offset = Random.insideUnitSphere * radius;
+				Vector3 offset = (Random.insideUnitSphere * radius) + Vector3.up * 20;
 				Enemy enemy = GameObject.Instantiate(BaseMonster, transform.position + offset, Quaternion.identity);
 				group.Enemies.Add(enemy);
 				enemy.Group = group;
