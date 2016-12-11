@@ -10,7 +10,6 @@ namespace Units
 	public class Base : BaseUnit
 	{
 		public Transform DropPoint = null;
-		public float StoredMass;
 
 		// Main Components:
 		public bool Engine1;
@@ -27,11 +26,22 @@ namespace Units
 		public GameObject Engine2Mesh;
 		public GameObject NavigationMesh;
 		public GameObject EnergyCodeMesh;
+		public GameObject DeflectorMesh;
 
 		void Start()
 		{
 			// Register the base.
 			GlobalManager.Instance.Home = this;
+		}
+
+		void FixedUpdate()
+		{
+			BottomHybernation.SetActive(HybernationModule);
+			Engine1Mesh.SetActive(Engine1);
+			Engine2Mesh.SetActive(Engine2);
+			NavigationMesh.SetActive(Navigation);
+			EnergyCodeMesh.SetActive(EnergyCore);
+			DeflectorMesh.SetActive(Deflector);
 		}
 
 		void OnTriggerEnter(Collider collider)
@@ -46,13 +56,14 @@ namespace Units
 			}
 		}
 
-		public IEnumerable<BaseComponentState> GetShipComponentsState(){
-			yield return new BaseComponentState ("Engine 1", Engine1);
-			yield return new BaseComponentState ("Engine 2", Engine2);
-			yield return new BaseComponentState ("Navigation", Navigation);
-			yield return new BaseComponentState ("Deflector", Deflector);
-			yield return new BaseComponentState ("Energy Core", EnergyCore);
-			yield return new BaseComponentState ("Hybernation Module", HybernationModule);
+		public IEnumerable<BaseComponentState> GetShipComponentsState()
+		{
+			yield return new BaseComponentState("Engine 1", Engine1);
+			yield return new BaseComponentState("Engine 2", Engine2);
+			yield return new BaseComponentState("Navigation", Navigation);
+			yield return new BaseComponentState("Deflector", Deflector);
+			yield return new BaseComponentState("Energy Core", EnergyCore);
+			yield return new BaseComponentState("Hybernation Module", HybernationModule);
 		}
 
 		void OnTriggerExit(Collider collider)
@@ -68,11 +79,13 @@ namespace Units
 		}
 	}
 
-	public class BaseComponentState {
+	public class BaseComponentState
+	{
 		public string Name;
 		public bool IsExisting;
 
-		public BaseComponentState(string name, bool isExisting){
+		public BaseComponentState(string name, bool isExisting)
+		{
 			Name = name;
 			IsExisting = isExisting;
 		}

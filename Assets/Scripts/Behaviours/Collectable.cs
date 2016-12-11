@@ -9,6 +9,18 @@ namespace Behaviours
 		public float DefaultDrag = 15.0f;
 
 		public float EnergyValue = 10.0f;
+		public CollectableType Type = CollectableType.Energy;
+
+		public enum CollectableType
+		{
+			Energy,
+			Core,
+			Engine1,
+			Engine2,
+			Hybernation,
+			Navigation,
+			Deflector
+		}
 
 		public void Start()
 		{
