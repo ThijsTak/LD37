@@ -15,7 +15,7 @@ namespace Assets.Scripts.Behaviours
 			for (int i = 0; i < numberToSpawn; i++)
 			{
 				var blop = GameObject.Instantiate(Spawn, 
-					gameObject.transform.position, 
+					gameObject.transform.position + (Vector3.up * 2), 
 					gameObject.transform.rotation);
 
 				var collect = blop.GetComponent<Collectable>();
@@ -25,7 +25,7 @@ namespace Assets.Scripts.Behaviours
 				body.AddForce(
 					Random.Range(-spawnMaxForce, spawnMaxForce),
 					Random.Range(0, spawnMaxForce),
-					Random.Range(-spawnMaxForce, spawnMaxForce));
+					Random.Range(-spawnMaxForce, spawnMaxForce), ForceMode.Impulse);
 			}
 		}
 	}
