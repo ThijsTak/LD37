@@ -28,7 +28,7 @@ public class RadarView : MonoBehaviour {
 		foreach (var r in _Items) {
 			// Remove after the duration of the current frame (can be a single frame but
 			// never shorter then 1 frame at 120 fps and never longer then 1 frame at 20fps)
-			DestroyObject (r.Pip, Mathf.Clamp(Time.time, 1.0f/120, 1.0f/20));
+			DestroyObject (r.Pip, Mathf.Clamp(Time.time, 1.0f/120.0f, 1.0f/20.0f));
 		}
 
 		// Clean the list since everything is scheduled for delete anyway.

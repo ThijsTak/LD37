@@ -270,7 +270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &192827515
 Prefab:
@@ -617,6 +617,7 @@ MonoBehaviour:
     MuleDroppointDescentOffset: 1.5
     MuleSpeed: 30
     PlayerHoverHeight: 1
+    PlayerRadarRange: 100
 --- !u!1 &1206121099 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100012, guid: 80ca981a2966a0143a534499f552fd3b, type: 3}
@@ -877,7 +878,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4598031714172078, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}

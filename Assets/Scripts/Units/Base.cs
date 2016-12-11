@@ -1,4 +1,8 @@
 ﻿using Core;
+using System.Linq;
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Units
@@ -42,6 +46,15 @@ namespace Units
 			}
 		}
 
+		public IEnumerable<BaseComponentState> GetShipComponentsState(){
+			yield return new BaseComponentState ("Engine 1", Engine1);
+			yield return new BaseComponentState ("Engine 2", Engine2);
+			yield return new BaseComponentState ("Navigation", Navigation);
+			yield return new BaseComponentState ("Deflector", Deflector);
+			yield return new BaseComponentState ("Energy Core", EnergyCore);
+			yield return new BaseComponentState ("Hybernation Module", HybernationModule);
+		}
+
 		void OnTriggerExit(Collider collider)
 		{
 			if (collider.gameObject.tag == "Player")
@@ -52,6 +65,16 @@ namespace Units
 					RoofHybernation.SetActive(true);
 				}
 			}
+		}
+	}
+
+	public class BaseComponentState {
+		public string Name;
+		public bool IsExisting;
+
+		public BaseComponentState(string name, bool isExisting){
+			Name = name;
+			IsExisting = isExisting;
 		}
 	}
 }
