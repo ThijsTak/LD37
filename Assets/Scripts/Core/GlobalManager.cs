@@ -11,11 +11,12 @@ namespace Core
 	{
 		public static GlobalManager Instance;
 		public Base Home;
+		public Player player;
 		Queue<Collectable> muleOrderQueue = new Queue<Collectable>();
 		List<Collectable> assignedItems = new List<Collectable>();
 		public BasicSettings Settings = new BasicSettings();
 		List<Mule> mules = new List<Mule>(10);
-
+		List<Group> SpawnedGroups = new List<Group>(20);
 
 		public void Awake()
 		{

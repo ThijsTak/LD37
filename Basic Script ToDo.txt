@@ -29,3 +29,14 @@
  ~ Over the shoulder camera.
  V Change movement of player to accell/rotate style.
  - Add height fixer to all items.
+
+  ~~~
+  
+  - Create Spawner Logic
+  - Create Group Controller
+   - Create Group Behaviour Tree
+  - Create Individual creature orders
+   - Idle
+   - Move
+   - Attack
+   - Charge (Dogzilla)
