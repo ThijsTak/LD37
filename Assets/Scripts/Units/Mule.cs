@@ -11,7 +11,7 @@ namespace Units
 		public MinMaxValue Health = new MinMaxValue();
 		public Queue<BehaviourState> Orders = new Queue<BehaviourState>();
 		public float Speed = 0.0f;
-		public Draggable Cargo = null;
+		public Collectable Cargo = null;
 		public GameObject Dock = null;
 
 		public Rigidbody Body = null;
@@ -24,7 +24,10 @@ namespace Units
 
 		public void Update()
 		{
-
+			if (Body.velocity.x != 0 && Body.velocity.z != 0)
+			{
+				transform.rotation = Quaternion.LookRotation(new Vector3(Body.velocity.x, 0, Body.velocity.z));
+			}
 		}
 
 		public void FixedUpdate()

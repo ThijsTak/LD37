@@ -27,7 +27,7 @@ namespace Behaviours.Mule
 		{
 			// Move towards the target.
 			Vector3 v = new Vector3(Target.position.x,
-						mule.transform.position.y,
+						GlobalManager.Instance.Settings.MuleFlyHeight,
 						Target.position.z);
 
 			float dir = Vector3.Distance(v, mule.transform.position);

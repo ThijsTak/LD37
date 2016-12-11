@@ -11,7 +11,7 @@ namespace Behaviours.Mule
 
 		}
 
-		public GrabCargo(Draggable target)
+		public GrabCargo(Collectable target)
 		{
 			Target = target;
 		}
@@ -19,14 +19,14 @@ namespace Behaviours.Mule
 		/// <summary>
 		/// The target to pick up.
 		/// </summary>
-		private Draggable Target = null;
+		private Collectable Target = null;
 
 		#region Overrides of BehaviourState
 
 		public override bool Update(Units.Mule mule)
 		{
 			mule.Cargo = Target;
-			Target.body.useGravity = false;
+			Target.Transporter = mule.gameObject;
 			return true;
 		}
 

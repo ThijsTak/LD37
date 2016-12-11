@@ -18,8 +18,8 @@
   ~ Weight/Speed reduction
   v Grab beam
  
-  - Order system.
+  ~ Order system.
    - Highlight items under the cursor.
-   - Perform order action.
-   - Add order to orders queue.
-   - Assign order to Mule
+   v Perform order action.
+   v Add order to orders queue.
+   v Assign order to Mule
