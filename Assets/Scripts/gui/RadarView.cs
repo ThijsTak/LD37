@@ -6,8 +6,6 @@ using System.Text;
 using UnityEngine;
 
 public class RadarView : MonoBehaviour {
-	public Transform RadarSource;
-	public float RadarRange = 100;
 	public RadarCategory[] Categories;
 
 
@@ -21,8 +19,8 @@ public class RadarView : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (RadarSource == null) {
-			Debug.Log ("RadarSource is missing");
+		if (Core.GlobalManager.Instance.player == null) {
+			Debug.Log ("Player is missing");
 			return;
 		}
 
@@ -36,15 +34,17 @@ public class RadarView : MonoBehaviour {
 		// Clean the list since everything is scheduled for delete anyway.
 		_Items.Clear ();
 
-		var position = RadarSource.position;
-		var rotation = RadarSource.rotation;
+		var radarRange = Core.GlobalManager.Instance.Settings.PlayerRadarRange;
+		var radarSource = Core.GlobalManager.Instance.player;
+		var position = radarSource.transform.position;
+		var rotation = radarSource.transform.rotation;
 
 		foreach (var category in Categories) {
 			var tagged_objects = GameObject.FindGameObjectsWithTag (category.Name);
 			foreach (var tagged_object in tagged_objects) {
 				var offset = position - tagged_object.transform.position;
 
-				if (offset.magnitude > RadarRange) {
+				if (offset.magnitude > radarRange) {
 					continue;
 				}
 
@@ -55,7 +55,7 @@ public class RadarView : MonoBehaviour {
 				var offset_nav =  -new Vector3(offset.x, offset.z, 0);
 
 				// Scale the image based on the radar view size
-				offset_nav *= (RadarViewSize / RadarRange); 
+				offset_nav *= (RadarViewSize / radarRange); 
 
 				var parent = this.gameObject.GetComponent<RectTransform> ();
 				var new_position = parent.position + offset_nav;
