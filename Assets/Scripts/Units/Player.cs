@@ -14,16 +14,21 @@ namespace Units
 	[RequireComponent(typeof(Rigidbody))]
 	public class Player : BaseUnit
 	{
-		[SerializeField] MinMaxValue Energy = new MinMaxValue();
-		[SerializeField] TractorSystem TractorSystem = new TractorSystem();
-		[SerializeField] private Weapon Stunner;
-		[SerializeField] private Weapon Blaster;
-		[SerializeField] private float movementMultiplier = 2.0f;
-		[SerializeField] private float turnMultiplier = 0.5f;
-		[SerializeField] private float defaultDrag = 0;
+		[SerializeField]
+		TractorSystem TractorSystem = new TractorSystem();
+		[SerializeField]
+		private Weapon Stunner;
+		[SerializeField]
+		private Weapon Blaster;
+		[SerializeField]
+		private float movementMultiplier = 2.0f;
+		[SerializeField]
+		private float turnMultiplier = 0.5f;
+		[SerializeField]
+		private float defaultDrag = 0;
 
 		// Prefetched components.
-		private Rigidbody body;
+		public Rigidbody body;
 		private LineRenderer tractorLine;
 
 		/// <summary>
@@ -72,7 +77,7 @@ namespace Units
 			transform.position = new Vector3(
 				transform.position.x,
 				HeightHelper.GetHeightFromTerrain(transform.position) + GlobalManager.Instance.Settings.PlayerHoverHeight,
-				transform.position.z); 
+				transform.position.z);
 		}
 
 		/// <summary>

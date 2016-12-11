@@ -24,7 +24,8 @@ GameObject:
   - component: {fileID: 23082431962529340}
   - component: {fileID: 114681637060086230}
   - component: {fileID: 54921156897180416}
-  m_Layer: 0
+  - component: {fileID: 114947744713938106}
+  m_Layer: 8
   m_Name: Energy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +44,7 @@ GameObject:
   - component: {fileID: 23124884595238126}
   - component: {fileID: 96064148295165186}
   - component: {fileID: 114960150034220514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +63,7 @@ GameObject:
   - component: {fileID: 23655205827570338}
   - component: {fileID: 96737781108142764}
   - component: {fileID: 114037587118139964}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -81,7 +82,7 @@ GameObject:
   - component: {fileID: 23727795387777580}
   - component: {fileID: 96923125211544698}
   - component: {fileID: 114295747005289124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Blip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -663,8 +664,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Body: {fileID: 0}
   Transporter: {fileID: 0}
-  DefaultDrag: 15
+  DefaultDrag: 1
   EnergyValue: 10
+--- !u!114 &114947744713938106
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1405529877508942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7576c3ed326839243b0d173369601791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114960150034220514
 MonoBehaviour:
   m_ObjectHideFlags: 1
