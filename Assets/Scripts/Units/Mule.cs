@@ -11,7 +11,7 @@ namespace Units
 		public MinMaxValue Health = new MinMaxValue();
 		public Queue<BehaviourState> Orders = new Queue<BehaviourState>();
 		public float Speed = 0.0f;
-		public Draggable Cargo = null;
+		public Collectable Cargo = null;
 		public GameObject Dock = null;
 
 		public Rigidbody Body = null;

@@ -11,8 +11,8 @@ namespace Core
 	{
 		public static GlobalManager Instance;
 		public Base Home;
-		Queue<Draggable> muleOrderQueue = new Queue<Draggable>();
-		List<Draggable> assignedItems = new List<Draggable>();
+		Queue<Collectable> muleOrderQueue = new Queue<Collectable>();
+		List<Collectable> assignedItems = new List<Collectable>();
 		public BasicSettings Settings = new BasicSettings();
 		List<Mule> mules = new List<Mule>(10);
 
@@ -32,7 +32,7 @@ namespace Core
 			mules.Add(mule);
 		}
 
-		public void AddToQueue(Draggable item)
+		public void AddToQueue(Collectable item)
 		{
 			if (muleOrderQueue.Contains(item) || assignedItems.Contains(item))
 			{
@@ -42,7 +42,7 @@ namespace Core
 			muleOrderQueue.Enqueue(item);
 		}
 
-		public Draggable GetFromQueue()
+		public Collectable GetFromQueue()
 		{
 			if (muleOrderQueue.Count > 0)
 			{
@@ -53,7 +53,7 @@ namespace Core
 			return null;
 		}
 
-		public void FinishOrder(Draggable item)
+		public void FinishOrder(Collectable item)
 		{
 			if (assignedItems.Contains(item))
 			{

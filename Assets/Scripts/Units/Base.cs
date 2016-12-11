@@ -5,9 +5,8 @@ namespace Units
 {
 	public class Base : BaseUnit
 	{
-		public Transform DropPoint;
-
-		public MinMaxValue energy = new MinMaxValue();
+		public Transform DropPoint = null;
+		public MinMaxValue Energy = new MinMaxValue();
 		public float StoredMass;
 
 		// Main Components:
@@ -17,5 +16,15 @@ namespace Units
 		public bool Deflector;
 		public bool EnergyCore;
 		public bool HybernationModule;
+
+		public void AddEnergy(float amount)
+		{
+			Energy.ChangeValue(amount);
+		}
+
+		public void RemoveEnergy(float amount)
+		{
+			Energy.ChangeValue(-amount);
+		}
 	}
 }
