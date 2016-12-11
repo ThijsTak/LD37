@@ -1,25 +1,27 @@
 fileFormatVersion: 2
-guid: 12d26e342c66f0f4598f4f5c83460cd7
-timeCreated: 1481377530
+guid: d19c2c72fe6c753488f561592edabf65
+timeCreated: 1481452108
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: TreeBase
-    100004: TreeLeafs
-    400000: //RootNode
-    400002: TreeBase
-    400004: TreeLeafs
-    2300000: //RootNode
-    2300002: TreeBase
-    2300004: TreeLeafs
-    3300000: //RootNode
-    3300002: TreeBase
-    3300004: TreeLeafs
-    4300000: Cylinder
-    4300002: TreeBase
-    4300004: TreeLeafs
+    100000: Cylinder
+    100002: //RootNode
+    100004: treeBase
+    100006: treeLeaf
+    400000: Cylinder
+    400002: //RootNode
+    400004: treeBase
+    400006: treeLeaf
+    2300000: Cylinder
+    2300002: treeBase
+    2300004: treeLeaf
+    3300000: Cylinder
+    3300002: treeBase
+    3300004: treeLeaf
+    4300000: treeBase
+    4300002: treeLeaf
+    4300004: Cylinder
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -65,7 +67,7 @@ ModelImporter:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -84,7 +86,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
