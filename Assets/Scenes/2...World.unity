@@ -419,7 +419,37 @@ Transform:
   m_Father: {fileID: 34695098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &961893642
+--- !u!1 &1136588463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1136588464}
+  m_Layer: 0
+  m_Name: Logic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1136588464
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136588463}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1599589942}
+  - {fileID: 1470221105}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1155690948
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -461,36 +491,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af1116a0fb5947646967172d47a599d3, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1136588463
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1136588464}
-  m_Layer: 0
-  m_Name: Logic
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1136588464
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1136588463}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1599589942}
-  - {fileID: 1470221105}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1315719839
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,9 +535,9 @@ Terrain:
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 1bd539bc3e3956b46b332d123bb2b13d, type: 2}
   m_TreeDistance: 2000
-  m_TreeBillboardDistance: 500
+  m_TreeBillboardDistance: 750
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 50
+  m_TreeMaximumFullLODCount: 200
   m_DetailObjectDistance: 80
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
@@ -668,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Home: {fileID: 0}
+  player: {fileID: 0}
   Settings:
     MuleFlyHeight: 10
     MuleDescentSpeed: 1
@@ -675,6 +676,7 @@ MonoBehaviour:
     MuleDroppointDescentOffset: 1.5
     MuleSpeed: 30
     PlayerHoverHeight: 1
+    PlayerRadarRange: 100
 --- !u!114 &1470221107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -689,8 +691,8 @@ MonoBehaviour:
   Target: {fileID: 1731402464}
   Behaviour: 1
   TopDownZoom: 50
-  ShoulderHeight: 20
-  ShoulderDistance: 20
+  ShoulderHeight: 15
+  ShoulderDistance: 40
 --- !u!81 &1470221108
 AudioListener:
   m_ObjectHideFlags: 0
@@ -869,7 +871,7 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 4606701160098112, guid: af1116a0fb5947646967172d47a599d3,
     type: 2}
-  m_PrefabInternal: {fileID: 961893642}
+  m_PrefabInternal: {fileID: 1155690948}
 --- !u!4 &1755744929 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4852097085646640, guid: c32fe21225bb7164e94a3229ea37e29c,
