@@ -36,6 +36,8 @@ namespace Units
 		/// </summary>
 		void Start()
 		{
+			GlobalManager.Instance.player = this;
+
 			body = GetComponent<Rigidbody>();
 			if (body == null)
 			{
