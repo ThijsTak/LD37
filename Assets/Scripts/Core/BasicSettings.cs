@@ -12,5 +12,7 @@ namespace Core
 		public float MuleDescentSpeed = 1.0f;
 		public float MuleAscentSpeed = 1.0f;
 		public float MuleDroppointDescentOffset = 1.5f;
+
+		public float PlayerHoverHeight = 1.0f;
 	}
 }

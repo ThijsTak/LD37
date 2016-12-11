@@ -17,6 +17,15 @@ namespace Units
 		public bool EnergyCore;
 		public bool HybernationModule;
 
+		public GameObject RoofShip;
+		public GameObject RoofHybernation;
+		public GameObject BottomHybernation;
+		public GameObject Engine1Mesh;
+		public GameObject Engine2Mesh;
+		public GameObject NavigationMesh;
+		public GameObject EnergyCodeMesh;
+
+
 		public void AddEnergy(float amount)
 		{
 			Energy.ChangeValue(amount);
@@ -25,6 +34,30 @@ namespace Units
 		public void RemoveEnergy(float amount)
 		{
 			Energy.ChangeValue(-amount);
+		}
+
+		void OnTriggerEnter(Collider collider)
+		{
+			if (collider.gameObject.tag == "Player")
+			{
+				RoofShip.SetActive(false);
+				if (HybernationModule)
+				{
+					RoofHybernation.SetActive(false);
+				}
+			}
+		}
+
+		void OnTriggerExit(Collider collider)
+		{
+			if (collider.gameObject.tag == "Player")
+			{
+				RoofShip.SetActive(true);
+				if (HybernationModule)
+				{
+					RoofHybernation.SetActive(true);
+				}
+			}
 		}
 	}
 }

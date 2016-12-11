@@ -1,4 +1,5 @@
-﻿using Behaviours;
+﻿using Assets.Scripts.Helpers;
+using Behaviours;
 using Helpers;
 using Core;
 using Helpers;
@@ -65,6 +66,11 @@ namespace Units
 			{
 				Stunner.Update(Time.deltaTime);
 			}
+
+			transform.position = new Vector3(
+				transform.position.x,
+				HeightHelper.GetHeightFromTerrain(transform.position) + GlobalManager.Instance.Settings.PlayerHoverHeight,
+				transform.position.z); 
 		}
 
 		/// <summary>
