@@ -27,13 +27,13 @@ namespace Behaviours.Mule
 		{
 			// Move towards the target.
 			Vector3 v = new Vector3(Target.position.x,
-						GlobalManager.Instance.Settings.MuleFlyHeight,
+						mule.transform.position.y,
 						Target.position.z);
 
 			float dir = Vector3.Distance(v, mule.transform.position);
 
 			// Are we there yet?
-			if (dir <= mule.Speed * Time.fixedDeltaTime)
+			if (dir <= GlobalManager.Instance.Settings.MuleSpeed * Time.fixedDeltaTime)
 			{
 				mule.Body.velocity = Vector3.zero;
 				mule.transform.position = new Vector3(Target.position.x, mule.transform.position.y, Target.position.z);
@@ -41,7 +41,7 @@ namespace Behaviours.Mule
 			}
 			else
 			{
-				Vector3 vvx = (v - mule.transform.position).normalized * mule.Speed;
+				Vector3 vvx = (v - mule.transform.position).normalized * GlobalManager.Instance.Settings.MuleSpeed;
 				mule.Body.velocity = new Vector3(vvx.x, 0, vvx.z);
 				return false;
 			}

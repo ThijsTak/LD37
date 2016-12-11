@@ -47,7 +47,7 @@ namespace Assets.Scripts.Behaviours
 		public void FixedBehaviour()
 		{
 			transform.position = new Vector3(Target.position.x, TopDownZoom, Target.position.z);
-			transform.rotation = Quaternion.Euler(0, 90, 0);
+			transform.rotation = Quaternion.Euler(90, 0, 0);
 		}
 
 		public void ShoulderBehaviour()

@@ -6,7 +6,6 @@ namespace Units
 	public class Base : BaseUnit
 	{
 		public Transform DropPoint = null;
-		public MinMaxValue Energy = new MinMaxValue();
 		public float StoredMass;
 
 		// Main Components:
@@ -25,15 +24,10 @@ namespace Units
 		public GameObject NavigationMesh;
 		public GameObject EnergyCodeMesh;
 
-
-		public void AddEnergy(float amount)
+		void Start()
 		{
-			Energy.ChangeValue(amount);
-		}
-
-		public void RemoveEnergy(float amount)
-		{
-			Energy.ChangeValue(-amount);
+			// Register the base.
+			GlobalManager.Instance.Home = this;
 		}
 
 		void OnTriggerEnter(Collider collider)

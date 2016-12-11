@@ -6,7 +6,7 @@ using Behaviours.Mule;
 using Core;
 using UnityEngine;
 
-namespace Assets.Scripts.Behaviours.Mule
+namespace Behaviours.Mule
 {
 	class Descend : BehaviourState
 	{

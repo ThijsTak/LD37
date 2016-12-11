@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Behaviours.Mule;
+﻿using Behaviours.Mule;
 using Core;
 using UnityEngine;
 
-namespace Assets.Scripts.Behaviours.Mule
+namespace Behaviours.Mule
 {
 	public class Ascend : BehaviourState
 	{
