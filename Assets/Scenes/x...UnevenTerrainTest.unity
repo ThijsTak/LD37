@@ -100,7 +100,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: d19c2c72fe6c753488f561592edabf65, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 133.1
+      value: 114.08
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d19c2c72fe6c753488f561592edabf65, type: 3}
       propertyPath: m_LocalPosition.y
@@ -108,7 +108,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d19c2c72fe6c753488f561592edabf65, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 98.5
+      value: 109.3
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d19c2c72fe6c753488f561592edabf65, type: 3}
       propertyPath: m_LocalRotation.x
@@ -311,6 +311,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 114378021893926240, guid: 9f337c4e277aa584ea457c706af8f6f2,
+        type: 2}
+      propertyPath: Spawn
+      value: 
+      objectReference: {fileID: 1405529877508942, guid: 15e07fe2025cf7543a43600ea58a3e49,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f337c4e277aa584ea457c706af8f6f2, type: 2}
   m_IsPrefabParent: 0
@@ -1090,7 +1096,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49bf70a0d8c36d5418b10e5741f42348, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.011429889
+      value: -2.94
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 49bf70a0d8c36d5418b10e5741f42348, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1141,6 +1147,8 @@ MonoBehaviour:
   maxNumberOfActiveGroups: 3
   secondsBetweenSpawns: 5
   maxDistanceOfPlayer: 0
+  DefaultState: 2
+  MaxRoamingRadius: 25
 --- !u!1001 &2017959722
 Prefab:
   m_ObjectHideFlags: 0

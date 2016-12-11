@@ -46,10 +46,11 @@ namespace Assets.Scripts.Core
 		/// <summary>
 		/// The current state of the enemy.
 		/// </summary>
-		public EnemyState CurrentState;
+		public EnemyState CurrentState = EnemyState.Roaming;
 
-		public bool AwareOfPlayer;
-		public Vector3 WalkTarget;
-		public Group HuntGroup;
+		public bool AwareOfPlayer = false;
+		public Vector3 WalkTarget = Vector3.zero;
+		public Group HuntGroup = null;
+		public float MaxRoamingRadius = 50.0f;
 	}
 }

@@ -23,5 +23,10 @@ namespace Assets.Scripts.Helpers
 
 			return 0;
 		}
+
+		public static Vector3 HeightCorrect(Vector3 point)
+		{
+			return new Vector3(point.x, GetHeightFromTerrain(new Vector3(point.x, 10000, point.z)), point.z);
+		}
 	}
 }

@@ -2,8 +2,8 @@
 
 namespace Behaviours.Enemies
 {
-	abstract class BaseBehaviour
+	public abstract class BaseBehaviour
 	{
-		public abstract void Update(Enemy enemy);
+		public abstract bool Update(Enemy enemy);
 	}
 }

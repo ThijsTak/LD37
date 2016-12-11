@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Scripts.Core;
 using Core;
 using Units;
 using UnityEngine;
@@ -13,6 +14,9 @@ namespace Behaviours
 		public int maxNumberOfActiveGroups = 3;
 		public float secondsBetweenSpawns = 60.0f;
 		public float maxDistanceOfPlayer = 0f;
+		public EnemyStateInfo.EnemyState DefaultState = EnemyStateInfo.EnemyState.Roaming;
+
+		public float MaxRoamingRadius = 50.0f;
 
 		private float deltaTime = 0f;
 		List<Group> linkedGroups = new List<Group>();
@@ -55,6 +59,9 @@ namespace Behaviours
 			// Ok, spawn new monsters.
 			int number = (int)Random.Range(NumberPerGroup.x, NumberPerGroup.y);
 			Group group = new Group();
+			group.State.MaxRoamingRadius = MaxRoamingRadius;
+			group.State.CurrentState = DefaultState;
+			group.owner = this;
 			linkedGroups.Add(group);
 
 			for (int i = 0; i < number; i++)
@@ -64,6 +71,9 @@ namespace Behaviours
 				group.Enemies.Add(enemy);
 				enemy.Group = group;
 			}
+
+			// Ok, now assign the orders.
+			group.MassAssignOrders();
 
 			deltaTime = 0.0f;
 		}
