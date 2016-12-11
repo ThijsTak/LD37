@@ -1077,10 +1077,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3141c5ebb689fac47b4a0c88759d0820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DropPoint: {fileID: 4000848492113298}
   Energy:
     current: 2000
     max: 10000
+  DropPoint: {fileID: 4000848492113298}
   StoredMass: 0
   Engine1: 0
   Engine2: 0

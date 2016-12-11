@@ -16,7 +16,7 @@ namespace Assets.Scripts.Behaviours
 		{
 			if (unit == null)
 			{
-				GetComponent<BaseUnit>();
+				unit = GetComponent<BaseUnit>();
 			}
 		}
 
@@ -24,7 +24,7 @@ namespace Assets.Scripts.Behaviours
 		{
 			if (unit.GetEnergy() == 0)
 			{
-				SendMessage(Message);
+				SendMessage(Message); 
 			}
 		}
 	}

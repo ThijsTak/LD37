@@ -39,7 +39,7 @@ namespace Core
 				if (current > max)
 				{
 					current = max;
-				}
+				} 
 			}
 		}
 
@@ -53,14 +53,16 @@ namespace Core
 			// Check if the current value will lower our value below 0.
 			if (current + delta < 0)
 			{
+				var ret = delta - current;
 				current = 0;
-				return current - delta;
+				return ret;
 			}
 
 			if (current + delta > Max)
 			{
+				var ret = Max - current;
 				current = Max;
-				return current + Max;
+				return ret;
 			}
 
 			current += delta;

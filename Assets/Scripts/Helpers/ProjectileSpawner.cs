@@ -16,13 +16,13 @@ namespace Helpers
 			}
 
 			var damage = newObject.GetComponent<Damage>();
-			if (damage == null)
+			if (damage != null)
 			{
 				damage.Power = power;
 				damage.Type = type;
 			}
 
-			return newObject;
+			return newObject; 
 		}
 	}
 }

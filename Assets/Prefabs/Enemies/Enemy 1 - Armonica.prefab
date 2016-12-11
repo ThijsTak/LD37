@@ -71,9 +71,12 @@ GameObject:
   - component: {fileID: 136935396380904454}
   - component: {fileID: 114400971504725344}
   - component: {fileID: 114271086131325626}
+  - component: {fileID: 114662203730111996}
+  - component: {fileID: 114160029833720660}
+  - component: {fileID: 114583714101143374}
   m_Layer: 11
   m_Name: Enemy 1 - Armonica
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -895,6 +898,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114160029833720660
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190326133652482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44d5704fc5c09454f99e4fe8449cc5b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spawn: {fileID: 1405529877508942, guid: 15e07fe2025cf7543a43600ea58a3e49, type: 2}
+  numberToSpawn: 3
+  energyPerSpawn: 10
+  spawnMaxForce: 10
 --- !u!114 &114271086131325626
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -907,8 +925,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Energy:
-    current: 0
-    max: 0
+    current: 10
+    max: 10
   Group:
     Enemies: []
     State:
@@ -946,6 +964,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 2.5
   Force: 75
+--- !u!114 &114583714101143374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190326133652482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6af8a6e12ca7af34b8323cee5813e969, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Message: Death
+  unit: {fileID: 0}
+--- !u!114 &114662203730111996
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190326133652482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7576c3ed326839243b0d173369601791, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136935396380904454
 CapsuleCollider:
   m_ObjectHideFlags: 1

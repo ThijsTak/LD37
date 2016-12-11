@@ -26,7 +26,7 @@ namespace Core
 
 		public void Init(BaseUnit unit)
 		{
-			rof = 60 / ShotsPerMinute;
+			rof = 60 / ShotsPerMinute; 
 			owner = unit;
 		}
 

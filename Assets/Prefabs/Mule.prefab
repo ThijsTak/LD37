@@ -608,10 +608,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cafcbffade52a4fa53be165a55a8df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Energy:
+    current: 0
+    max: 0
   Health:
     current: 0
     max: 0
-  Speed: 15
   Cargo: {fileID: 0}
   Dock: {fileID: 1125968723322544}
   Body: {fileID: 0}

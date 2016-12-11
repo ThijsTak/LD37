@@ -20,7 +20,7 @@ namespace Assets.Scripts.Behaviours
 				player.DrainEnergy(Damage);
 				player.body.AddForce(
 					(player.transform.position - gameObject.transform.position).normalized * Force, 
-					ForceMode.VelocityChange);
+					ForceMode.VelocityChange); 
 			}
 		}
 	}

@@ -70,10 +70,10 @@ namespace Units
 				Blaster.Update(Time.deltaTime);
 			}
 
-			if (Stunner != null)
-			{
-				Stunner.Update(Time.deltaTime);
-			}
+			//if (Stunner != null)
+			//{
+			//	Stunner.Update(Time.deltaTime);
+			//}
 
 			// Set height.
 			transform.position = new Vector3(
@@ -103,10 +103,10 @@ namespace Units
 			transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * turnMultiplier);
 
 			// Now check the actions.
-			if (Input.GetButton("Stunner"))
-			{
-				ShootStunner();
-			}
+			//if (Input.GetButton("Stunner"))
+			//{
+			//	ShootStunner();
+			//}
 
 			if (Input.GetButton("Weapon"))
 			{
@@ -126,28 +126,59 @@ namespace Units
 			UpdateTractor();
 		}
 
-		/// <summary>
-		/// Shoots the stunner.
-		/// </summary>
-		void ShootStunner()
-		{
-			if (Stunner != null)
-			{
-				// Get the mouse position relative to the camera.
-				Vector3 hitPoint = MouseHelper.GetMousePosition() - new Vector3(transform.position.x, 0, transform.position.z);
-				Stunner.Shoot(hitPoint);
-			}
-		}
+		///// <summary>
+		///// Shoots the stunner.
+		///// </summary>
+		//void ShootStunner()
+		//{
+		//	if (Stunner != null)
+		//	{
+		//		// Get the mouse position relative to the camera.
+		//		// Vector3 hitPoint = MouseHelper.GetMousePosition() - new Vector3(transform.position.x, 0, transform.position.z);
+
+		//		Vector3 hitPoint;
+
+		//		RaycastHit hit;
+		//		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+		//		if (Physics.Raycast(ray, out hit))
+		//		{
+		//			Transform objectHit = hit.transform;
+		//			hitPoint = hit.point;
+		//		}
+		//		else
+		//		{
+		//			hitPoint = transform.rotation * Vector3.forward;
+		//		}
+
+		//		Stunner.Shoot(hitPoint);
+		//	}
+		//}
 
 		/// <summary>
 		/// Shoots the weapon.
 		/// </summary>
-		void ShootWeapon()
+		void ShootWeapon() 
 		{
 			if (Blaster != null)
 			{
-				Vector3 hitPoint = MouseHelper.GetMousePosition() - new Vector3(transform.position.x, 0, transform.position.z);
-				Blaster.Shoot(hitPoint);
+
+				Vector3 hitPoint;
+
+				RaycastHit hit;
+				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+				if (Physics.Raycast(ray, out hit))
+				{
+					Transform objectHit = hit.transform;
+					hitPoint = hit.point - transform.position;
+				}
+				else
+				{
+					hitPoint = transform.rotation * Vector3.forward;
+				}
+
+				Blaster.Shoot(hitPoint.normalized);
 			}
 		}
 
