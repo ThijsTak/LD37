@@ -20,6 +20,7 @@ ModelImporter:
     4300000: Cylinder
     4300002: TreeBase
     4300004: TreeLeafs
+    4300006: Tree
     7400000: Default Take
     9500000: //RootNode
   materials:

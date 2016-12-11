@@ -13,8 +13,10 @@ ModelImporter:
     400004: Rock2Part2
     2300000: Rock2Part1
     2300002: Rock2Part2
+    2300004: //RootNode
     3300000: Rock2Part1
     3300002: Rock2Part2
+    3300004: //RootNode
     4300000: Rock2Part2
     4300002: Rock2Part1
     7400000: Default Take
