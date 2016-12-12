@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Core;
+using UnityEngine;
 
 namespace Behaviours
 {
@@ -10,6 +11,8 @@ namespace Behaviours
 
 		public float EnergyValue = 10.0f;
 		public CollectableType Type = CollectableType.Energy;
+
+		public bool AutoRegister = false;
 
 		public enum CollectableType
 		{
@@ -27,6 +30,11 @@ namespace Behaviours
 			Body = GetComponent<Rigidbody>();
 			Body.useGravity = Transporter == null;
 			Body.drag = Transporter == null ? DefaultDrag : 0;
+
+			if (AutoRegister)
+			{
+				GlobalManager.Instance.AddToQueue(this);
+			}
 		}
 
 		public void FixedUpdate()

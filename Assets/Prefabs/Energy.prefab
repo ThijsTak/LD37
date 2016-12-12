@@ -667,6 +667,7 @@ MonoBehaviour:
   DefaultDrag: 1
   EnergyValue: 10
   Type: 0
+  AutoRegister: 1
 --- !u!114 &114947744713938106
 MonoBehaviour:
   m_ObjectHideFlags: 1
