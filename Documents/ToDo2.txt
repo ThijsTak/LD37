@@ -20,6 +20,31 @@
    
    Nice
    ~ (P) Tutorial
-   - Fix Mule Pickup.
-   - Fix Mule height issue.
-   - Invicibility frame.
+   - Bugs:
+	   V Fix Mule Pickup.
+	   V Fix Mule height issue.
+	   V Invicibility frame.
+	   
+	    ~~~
+	
+	 - Must for later -
+  - Gameplay
+   - Additional energy
+	- Pickup
+   - Additional mules
+    - Pickup
+   - Energy per enemy
+   - Energy drain player
+   - Energy drain ship
+
+   
+   Issues:
+   - Autodrop collectables.
+   - Pickup noteification.
+   - Attack of the dogzilla.
+   - Mule pickip height.
+   - Enemy respawn not working.
+   - Increase radar range for powerups.
+   - Track energy drain from weapon fire.
+   - Boost while dragging.
+   - Shoot ahead on space.
