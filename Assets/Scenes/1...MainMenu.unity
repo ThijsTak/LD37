@@ -231,8 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb18cf285b992704385ff52a36c3588d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStart: 1
-  isQuit: 0
+  type: 1
 --- !u!1 &318430822
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,5 +656,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb18cf285b992704385ff52a36c3588d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStart: 0
-  isQuit: 1
+  type: 2

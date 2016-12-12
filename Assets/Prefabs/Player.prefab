@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4918265067314722}
   - component: {fileID: 108215009549488078}
   m_Layer: 14
-  m_Name: Spotlight (1)
+  m_Name: Spotlight - Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ GameObject:
   m_Layer: 14
   m_Name: CameraAttachment
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -69,6 +69,7 @@ GameObject:
   - component: {fileID: 54123356817884686}
   - component: {fileID: 120094894593297822}
   - component: {fileID: 65327891143798500}
+  - component: {fileID: 114211153774906750}
   m_Layer: 14
   m_Name: Player
   m_TagString: Player
@@ -103,7 +104,7 @@ GameObject:
   - component: {fileID: 4768173956316116}
   - component: {fileID: 108602344415972636}
   m_Layer: 14
-  m_Name: Spotlight
+  m_Name: Spotlight - Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,21 +369,51 @@ MonoBehaviour:
   movementMultiplier: 3
   turnMultiplier: 1.5
   defaultDrag: 0
+  Lights:
+  - {fileID: 108602344415972636}
+  - {fileID: 108215009549488078}
+  EnergyDrainMovementPerSecond: 2
+  BoostEnergyDrainMultiplier: 3
+  TractorEnergyDrain: 5
+  TotalEnergyDrain: 0
   body: {fileID: 0}
+  CanBoost: 1
+  BoostMulieplier: 6
+  lightTimeFactor: {x: 0.05, y: 0.15}
+  lightTimer: 0
+  lightIntencity: 3
+  currentIntencity: 0
+--- !u!114 &114211153774906750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1680584424436332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da15cf8bcc39d714ea6db88c965effe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Body: {fileID: 0}
+  Transporter: {fileID: 0}
+  DefaultDrag: 15
+  EnergyValue: 10
+  Type: 7
+  AutoRegister: 0
 --- !u!120 &120094894593297822
 LineRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680584424436332}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_Materials:
-  - {fileID: 2100000, guid: 851026c6cbdb55749994716ecd04023e, type: 2}
+  - {fileID: 2100000, guid: f82f5e07b6595b14d8618b3930346260, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -401,8 +432,8 @@ LineRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Positions:
+  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 1, z: 0}
-  - {x: 0, y: 1, z: 5}
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 1
@@ -411,19 +442,37 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 2
         time: 0
-        value: 1
+        value: 0.56643355
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
+        time: 0.17533632
+        value: 0.33151728
+        inSlope: -0.48428774
+        outSlope: -0.48428774
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.5295415
+        value: 0.36448067
+        inSlope: -0.8183718
+        outSlope: -0.8183718
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 0.6904465
+        value: 0.09652705
+        inSlope: -1.02669
+        outSlope: -1.02669
+        tangentMode: 0
+      - serializedVersion: 2
         time: 1
-        value: 0.3
+        value: 0
         inSlope: 0
         outSlope: 0
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
-      m_RotationOrder: 4
+      m_RotationOrder: 0
     colorGradient:
       key0:
         serializedVersion: 2
