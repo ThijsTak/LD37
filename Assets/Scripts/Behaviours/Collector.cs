@@ -61,8 +61,19 @@ namespace Behaviours
 							GlobalManager.Instance.Settings.EnergyGainPerUpgrade;
 						break;
 					case Collectable.CollectableType.Boost:
-						GlobalManager.Instance.player.BoostMulieplier +=
-							GlobalManager.Instance.Settings.BoostSpeedPerUpgrade;
+						if (!GlobalManager.Instance.player.CanBoost)
+						{
+							GlobalManager.Instance.player.CanBoost = true;
+						}
+						else
+						{
+							GlobalManager.Instance.player.BoostMulieplier +=
+								GlobalManager.Instance.Settings.BoostSpeedPerUpgrade;
+						}
+						break;
+					case Collectable.CollectableType.Tractor:
+						GlobalManager.Instance.player.TractorSystem.Power +=
+							GlobalManager.Instance.Settings.TractorIncrease;
 						break;
 				}
 

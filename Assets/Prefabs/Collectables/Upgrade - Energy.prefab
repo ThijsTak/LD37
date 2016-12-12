@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 114096639670131860}
   m_Layer: 8
   m_Name: Upgrade - Energy
-  m_TagString: Energy
+  m_TagString: Components
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -704,7 +704,7 @@ MonoBehaviour:
   DefaultDrag: 1
   EnergyValue: 10
   Type: 11
-  AutoRegister: 1
+  AutoRegister: 0
 --- !u!114 &114096639670131860
 MonoBehaviour:
   m_ObjectHideFlags: 1

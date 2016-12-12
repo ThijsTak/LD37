@@ -41,6 +41,8 @@ namespace Units
 		public GameObject EnergyCodeMesh;
 		public GameObject DeflectorMesh;
 
+		public Transform MuleSpawn;
+
 		void Start()
 		{
 			// Register the base.

@@ -24,5 +24,6 @@ namespace Core
 		public float EnemyTimersBeforeNewOrderInSeconds = 10.0f;
 		public float EnergyGainPerUpgrade = 100.0f;
 		public float BoostSpeedPerUpgrade = 0.5f;
+		public float TractorIncrease = 2.0f;
 	}
 }

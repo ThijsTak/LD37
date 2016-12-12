@@ -372,6 +372,8 @@ MonoBehaviour:
   Lights:
   - {fileID: 108602344415972636}
   - {fileID: 108215009549488078}
+  WarningSound: {fileID: 8300000, guid: 33f311d14db5b4529bb1e8b9f6d8550d, type: 3}
+  NoPowerSound: {fileID: 8300000, guid: e6d6b470329124458a61bb5f364e03fb, type: 3}
   EnergyDrainMovementPerSecond: 2
   BoostEnergyDrainMultiplier: 3
   TractorEnergyDrain: 5

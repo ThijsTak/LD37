@@ -28,7 +28,8 @@ namespace Behaviours
 			Pandicorn,
 			Boost,
 			EnergyIncrease,
-			Mules
+			Mules,
+			Tractor
 		}
 
 		public void Start()

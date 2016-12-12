@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Core;
 using Behaviours;
@@ -22,6 +23,7 @@ namespace Core
 		List<Group> SpawnedGroups = new List<Group>(20);
 
 		public bool PlayerPickedUp = false;
+		public GameObject MulePrefab;
 
 		public void Awake()
 		{
@@ -118,6 +120,11 @@ namespace Core
 			{
 				SceneManager.LoadScene(SceneHelper.GameOver);
 			}
+		}
+
+		public void CreateMule()
+		{
+			GameObject.Instantiate(MulePrefab, Home.MuleSpawn.position, Quaternion.identity);
 		}
 	}
 }

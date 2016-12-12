@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 114186929936928284}
   m_Layer: 8
   m_Name: Upgrade - Pandicorn
-  m_TagString: Untagged
+  m_TagString: Components
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
