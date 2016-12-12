@@ -37,7 +37,7 @@ public class RadarView : MonoBehaviour {
 		var position = radarSource.transform.position;
 		var rotation = radarSource.transform.rotation;
 
-		foreach (var category in Categories.Reverse()) {
+		foreach (var category in Categories.Where(x => x.IsEnabled).Reverse()) {
 			var radarRange = Mathf.Clamp(category.MaxDistance, 0, Core.GlobalManager.Instance.Settings.PlayerRadarRange);
 			var tagged_objects = GameObject.FindGameObjectsWithTag (category.Name);
 			foreach (var tagged_object in tagged_objects) {
