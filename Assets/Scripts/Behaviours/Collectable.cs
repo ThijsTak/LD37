@@ -24,7 +24,8 @@ namespace Behaviours
 			Navigation,
 			Deflector,
 			Player,
-			FauxHybernation
+			FauxHybernation,
+			Pandicorn
 		}
 
 		public void Start()

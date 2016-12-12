@@ -13,7 +13,7 @@ namespace Behaviours
 		public void OnTriggerStay(Collider collider)
 		{
 			var player = collider.GetComponent<Player>();
-			if (player != null  && player.Energy.Current < player.GetMaxEnegy())
+			if (player != null && player.Energy.Current < player.GetMaxEnegy())
 			{
 				var drain = GlobalManager.Instance.Home.RechanrgePlayerPerSecond * Time.deltaTime;
 				GlobalManager.Instance.Home.DrainEnergy(drain);
@@ -50,6 +50,9 @@ namespace Behaviours
 						return;
 					case Collectable.CollectableType.FauxHybernation:
 						return;
+					case Collectable.CollectableType.Pandicorn:
+						GlobalManager.Instance.Home.TotalNumberOfPandiCorns++;
+						break;
 				}
 
 				collider.gameObject.SendMessage("Death");

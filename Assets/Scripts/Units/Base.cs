@@ -102,7 +102,7 @@ namespace Units
 				+ (Deflector ? DeflectorAdditionalDrainPerMinute : 0.0f)
 				+ (EnergyCore ? EnergyCodeAdditionalDrainPerMinute : 0.0f)
 				+ (HybernationModule ? HybernationAdditionalDrainPerMinute : 0.0f)
-				+ TotalNumberOfPandiCorns * EnergyPerMinutePerPandiCorn;
+				- (TotalNumberOfPandiCorns * EnergyPerMinutePerPandiCorn);
 
 			DrainEnergy((totalEnergyDrainPerMinute / 60) * Time.fixedDeltaTime);
 		}

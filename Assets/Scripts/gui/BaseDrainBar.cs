@@ -13,6 +13,6 @@ public class BaseDrainBar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		var text_component = this.GetComponent<UnityEngine.UI.Text> ();
-		text_component.text = string.Format("{0:n2} energy per minute", GlobalManager.Instance.Home.totalEnergyDrainPerMinute);
+		text_component.text = string.Format("{0:n2} energy per minute", -GlobalManager.Instance.Home.totalEnergyDrainPerMinute);
 	}
 }
