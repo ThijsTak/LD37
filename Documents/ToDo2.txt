@@ -1,0 +1,22 @@
+  Must
+  - (P) Keys
+  - (T) Pandicorns
+   - Pickup (spawn on death)
+  - (T) Enemies
+   - Various method
+  - (T) Timer on walk enemies
+  - (W) Extract components
+  - (T) Sound effects
+
+ - Must for later -
+  - Gameplay
+   - Additional energy
+	- Pickup
+   - Additional mules
+    - Pickup
+   - Energy per enemy
+   - Energy drain player
+   - Energy drain ship
+   
+   Nice
+   ~ (P) Tutorial
