@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Terrain
   - Enemy
+  - Energy
+  - Base
+  - Components
   layers:
   - Default
   - TransparentFX

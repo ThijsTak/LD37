@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 114947744713938106}
   m_Layer: 8
   m_Name: Energy
-  m_TagString: Untagged
+  m_TagString: Energy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -343,7 +343,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 1
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.25
@@ -447,7 +447,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 1
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.25
@@ -551,7 +551,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 5
+  m_Time: 1
   m_Parameters:
     serializedVersion: 2
     widthMultiplier: 0.25
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 4668586415855336}
   RotateDirection: {x: 2, y: 2, z: 0}
-  Speed: 100
+  Speed: 500
 --- !u!114 &114295747005289124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -650,7 +650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 4668586415855336}
   RotateDirection: {x: 2, y: 0, z: 2}
-  Speed: 50
+  Speed: 300
 --- !u!114 &114681637060086230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -666,6 +666,7 @@ MonoBehaviour:
   Transporter: {fileID: 0}
   DefaultDrag: 1
   EnergyValue: 10
+  Type: 0
 --- !u!114 &114947744713938106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -690,7 +691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Parent: {fileID: 4668586415855336}
   RotateDirection: {x: 0, y: 2, z: 2}
-  Speed: 75
+  Speed: 400
 --- !u!135 &135570474404199770
 SphereCollider:
   m_ObjectHideFlags: 1
