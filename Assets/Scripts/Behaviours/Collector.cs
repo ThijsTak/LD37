@@ -13,7 +13,7 @@ namespace Behaviours
 		public void OnTriggerStay(Collider collider)
 		{
 			var player = collider.GetComponent<Player>();
-			if (player != null)
+			if (player != null  && player.Energy.Current < player.GetMaxEnegy())
 			{
 				var drain = GlobalManager.Instance.Home.RechanrgePlayerPerSecond * Time.deltaTime;
 				GlobalManager.Instance.Home.DrainEnergy(drain);
