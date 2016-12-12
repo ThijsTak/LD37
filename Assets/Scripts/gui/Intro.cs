@@ -19,8 +19,12 @@ public class Intro : MonoBehaviour {
 		
 	}
 
+	private bool CanSkip() {
+		return Input.GetButton ("Boost");
+	}
+
 	public void onNextImage(){
-		if (index >= (IntroImages.Count - 1)) {
+		if (index >= (IntroImages.Count - 1) || CanSkip()) {
 			LoadGameplayScene ();
 			return;
 		}
@@ -29,7 +33,7 @@ public class Intro : MonoBehaviour {
 	}
 		
 	public void onPrevImage (){
-		if (index == 0) {
+		if (index == 0|| CanSkip()) {
 			LoadMainMenuScene ();
 			return;
 		}
@@ -49,13 +53,13 @@ public class Intro : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (0 == index) {
+		if (0 == index || CanSkip()) {
 			PrevButton.GetComponentInChildren<UnityEngine.UI.Text> ().text = "Main Menu";
 		} else {
 			PrevButton.GetComponentInChildren<UnityEngine.UI.Text> ().text = "Previous";
 		}
 
-		if (index >= (IntroImages.Count - 1)) {
+		if (index >= (IntroImages.Count - 1) || CanSkip()) {
 			NextButton.GetComponentInChildren<UnityEngine.UI.Text> ().text = "Start";
 		} else {
 			NextButton.GetComponentInChildren<UnityEngine.UI.Text> ().text = "Next";
