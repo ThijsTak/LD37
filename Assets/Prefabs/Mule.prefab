@@ -755,7 +755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinInSequence: 1
-  MaxInSequence: 5
+  MaxInSequence: 10
   MinBetweenEffects: 0
   MaxBetweenEffects: 0.5
   MinBetweenSequence: 1
