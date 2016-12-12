@@ -1,4 +1,5 @@
 ﻿using System;
+using Core;
 using UnityEngine;
 
 namespace Assets.Scripts.Behaviours
@@ -13,6 +14,8 @@ namespace Assets.Scripts.Behaviours
 		public float ShoulderHeight = 1.5f;
 		public float ShoulderDistance = 2.5f;
 		public float CameraMultiplier = 1.333f;
+		public float TractorMultiplierDistance = 2.0f;
+		public float TractorMulieplierHeight = 1.5f;
 
 		public enum BehaviourType
 		{
@@ -54,8 +57,11 @@ namespace Assets.Scripts.Behaviours
 		public void ShoulderBehaviour()
 		{
 			// This it the ideal camera position.
+			bool isDragging = GlobalManager.Instance.player.TractorSystem.Active;
 			Vector3 targetPosition = Target.transform.position + (Target.transform.rotation * (
-				new Vector3(0, ShoulderHeight, -ShoulderDistance)));
+				new Vector3(0, 
+				ShoulderHeight * (isDragging ? TractorMulieplierHeight : 1), 
+				-ShoulderDistance * (isDragging ? TractorMultiplierDistance : 1))));
 			
 			// Set the position.
 			transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * CameraMultiplier);
