@@ -14,6 +14,8 @@ namespace Core
 		public float MuleDroppointDescentOffset = 1.5f;
 		public float MuleSpeed = 30.0f;
 
+		public float MuleRotationSpeed  = 150.0f;
+
 		//[Header("Player variables")]
 		public float PlayerHoverHeight = 1.0f;
 		public float PlayerRadarRange = 100.0f;
