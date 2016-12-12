@@ -422,7 +422,7 @@ MonoBehaviour:
     current: 100
     max: 100
   TractorSystem:
-    Power: 5
+    Power: 7
     Radius: 6
     Target: {fileID: 0}
     Active: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   NoPowerSound: {fileID: 8300000, guid: e6d6b470329124458a61bb5f364e03fb, type: 3}
   EnergyDrainMovementPerSecond: 2
   BoostEnergyDrainMultiplier: 3
-  TractorEnergyDrain: 5
+  TractorEnergyDrain: 0.5
   TotalEnergyDrain: 0
   body: {fileID: 0}
   CanBoost: 0
