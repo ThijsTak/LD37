@@ -27,6 +27,8 @@ namespace Units
 		[SerializeField]
 		private float defaultDrag = 0;
 
+		public Light[] Lights;
+
 		public float EnergyDrainMovementPerSecond = 0.1f;
 		public float BoostEnergyDrainMultiplier = 2.5f;
 		public float TractorEnergyDrain = 0.75f;
@@ -37,6 +39,11 @@ namespace Units
 		private LineRenderer tractorLine;
 		public bool CanBoost = true;
 		public float BoostMulieplier = 2.0f;
+
+
+		public Vector2 lightTimeFactor = new Vector2(0.01f, 0.7f);
+		public float lightTimer = 0.0f;
+
 
 		Vector2 tractOffset = Vector2.zero;
 
@@ -73,6 +80,8 @@ namespace Units
 		/// </summary>
 		void Update()
 		{
+			UpdateLights();
+
 			if (Energy.Current == 0)
 			{
 				if (!GlobalManager.Instance.PlayerPickedUp)
@@ -101,6 +110,7 @@ namespace Units
 				transform.position.x,
 				HeightHelper.GetHeightFromTerrain(transform.position) + GlobalManager.Instance.Settings.PlayerHoverHeight,
 				transform.position.z);
+
 		}
 
 		/// <summary>
@@ -325,6 +335,40 @@ namespace Units
 				}
 
 				GlobalManager.Instance.AddToQueue(drag);
+			}
+		}
+
+		void UpdateLights()
+		{
+			lightTimer -= Time.deltaTime;
+
+			if (Energy.Current == 0)
+			{
+				SetLights(0);
+				return;
+			}
+			float percent = Energy.Current/Energy.Max;
+            if (percent <= 0.25f)
+			{
+				if (lightTimer < 0)
+				{
+					SetLights(Random.Range(0, lightIntencity));
+					lightTimer = Random.Range(lightTimeFactor.x, lightTimeFactor.y) + percent;
+					return;
+				}
+			}
+
+			SetLights(lightIntencity);
+		}
+
+		public float lightIntencity = 3.0f;
+		public float currentIntencity = 0.0f;
+		void SetLights(float intencity)
+		{
+			currentIntencity = intencity;
+			foreach (Light light in Lights)
+			{
+				light.intensity = intencity;
 			}
 		}
 	}
