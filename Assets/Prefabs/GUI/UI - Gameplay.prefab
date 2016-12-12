@@ -385,6 +385,11 @@ MonoBehaviour:
     MaxDistance: 100
     IgnoreMaxDistance: 0
     IsEnabled: 1
+  - Name: Mule
+    RadarPip: {fileID: 1201478092107726, guid: 54a64734e42534b1ca010f2c9421b743, type: 2}
+    MaxDistance: 300
+    IgnoreMaxDistance: 0
+    IsEnabled: 1
 --- !u!114 &114824569990752582
 MonoBehaviour:
   m_ObjectHideFlags: 1
