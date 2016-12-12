@@ -1503,21 +1503,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 108602344415972636, guid: af1116a0fb5947646967172d47a599d3,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114209397860511304, guid: af1116a0fb5947646967172d47a599d3,
-        type: 2}
-      propertyPath: lightTimeFactor.x
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 114209397860511304, guid: af1116a0fb5947646967172d47a599d3,
-        type: 2}
-      propertyPath: lightTimeFactor.y
-      value: 0.15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af1116a0fb5947646967172d47a599d3, type: 2}
   m_IsPrefabParent: 0
