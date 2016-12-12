@@ -43,7 +43,7 @@ GameObject:
   m_Layer: 8
   m_Name: ComponentEngine2
   m_TagString: Components
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -55,7 +55,7 @@ Transform:
   m_GameObject: {fileID: 1144622967422024}
   m_LocalRotation: {x: -0.50000006, y: -0.49999997, z: 0.49999997, w: 0.5}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4601667810625162}
   m_RootOrder: 0
@@ -66,8 +66,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1563146603740698}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.82, y: 1.32, z: 19.18}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1285.8771, y: 7.73, z: 261.28748}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4278609013937742}
@@ -143,6 +143,7 @@ MonoBehaviour:
   DefaultDrag: 15
   EnergyValue: 10
   Type: 3
+  AutoRegister: 0
 --- !u!114 &114221983484957018
 MonoBehaviour:
   m_ObjectHideFlags: 1
