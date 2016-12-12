@@ -1856,6 +1856,21 @@ Prefab:
       propertyPath: BoostMulieplier
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114209397860511304, guid: af1116a0fb5947646967172d47a599d3,
+        type: 2}
+      propertyPath: EnergyDrainMovementPerSecond
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209397860511304, guid: af1116a0fb5947646967172d47a599d3,
+        type: 2}
+      propertyPath: BoostEnergyDrainMultiplier
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209397860511304, guid: af1116a0fb5947646967172d47a599d3,
+        type: 2}
+      propertyPath: TractorEnergyDrain
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af1116a0fb5947646967172d47a599d3, type: 2}
   m_IsPrefabParent: 0
@@ -2967,3 +2982,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 225.31445, z: 2.145996}
   m_Center: {x: 0, y: 112.15723, z: -0.57299805}
+--- !u!1 &2074752421 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1680584424436332, guid: af1116a0fb5947646967172d47a599d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 961893642}
+--- !u!114 &2074752422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2074752421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da15cf8bcc39d714ea6db88c965effe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Body: {fileID: 0}
+  Transporter: {fileID: 0}
+  DefaultDrag: 15
+  EnergyValue: 10
+  Type: 7
+  AutoRegister: 0

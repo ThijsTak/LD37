@@ -27,6 +27,11 @@ namespace Units
 		[SerializeField]
 		private float defaultDrag = 0;
 
+		public float EnergyDrainMovementPerSecond = 0.1f;
+		public float BoostEnergyDrainMultiplier = 2.5f;
+		public float TractorEnergyDrain = 0.75f;
+		public float TotalEnergyDrain = 0.0f;
+
 		// Prefetched components.
 		public Rigidbody body;
 		private LineRenderer tractorLine;
@@ -109,6 +114,21 @@ namespace Units
 			}
 
 			UpdateInput();
+
+			// Input.GetButton("Boost") && !TractorSystem.Active
+			TotalEnergyDrain = Input.GetAxis("Vertical") != 0 ? EnergyDrainMovementPerSecond : 0;
+			if (Input.GetButton("Boost") && !TractorSystem.Active)
+			{
+				TotalEnergyDrain = TotalEnergyDrain * BoostEnergyDrainMultiplier;
+			}
+
+			if (TractorSystem.Active)
+			{
+				TotalEnergyDrain = TotalEnergyDrain + TractorEnergyDrain;
+			}
+
+
+			Energy.ChangeValue(-TotalEnergyDrain * Time.deltaTime);
 		}
 
 		/// <summary>
@@ -121,7 +141,7 @@ namespace Units
 			// Update speed.
 			Vector3 movement = transform.rotation * (Vector3.forward * Input.GetAxis("Vertical"));
 			body.velocity += movement * movementMultiplier *
-				(CanBoost && Input.GetButton("Boost") ? BoostMulieplier : 1);
+				(CanBoost && Input.GetButton("Boost") && !TractorSystem.Active ? BoostMulieplier : 1);
 			transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * turnMultiplier);
 
 			// Now check the actions.
