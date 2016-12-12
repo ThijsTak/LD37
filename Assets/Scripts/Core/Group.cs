@@ -19,7 +19,7 @@ namespace Core
 		public bool IsAlive
 		{
 			get { return 
-					!Enemies.Any(e => e != null && e.gameObject.activeSelf) 
+					Enemies.Any(e => e != null && e.gameObject.activeSelf) 
 					&& owner != null; }
 		}
 

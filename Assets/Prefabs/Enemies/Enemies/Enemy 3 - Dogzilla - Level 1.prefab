@@ -682,7 +682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawn: {fileID: 1405529877508942, guid: 15e07fe2025cf7543a43600ea58a3e49, type: 2}
   numberToSpawn: 3
-  energyPerSpawn: 10
+  energyPerSpawn: 50
   spawnMaxForce: 10
 --- !u!114 &114539584534496350
 MonoBehaviour:

@@ -49,3 +49,4 @@
    ~ Boost while dragging.
    - Shoot ahead on space.
    - Permanant ping of dragged objects.
+   - Fix Spawner.
