@@ -255,6 +255,7 @@ namespace Units
 
 				TractorSystem.Target = null;
 				TractorSystem.Active = false;
+				
 				return;
 			}
 
@@ -358,6 +359,12 @@ namespace Units
 					source.loop = false;
 					source.volume = 1;
 					source.Play();
+				}
+
+				if (TractorSystem.Active)
+				{
+					ActivateGrab();
+					UpdateTractor();
 				}
 
 				return;
