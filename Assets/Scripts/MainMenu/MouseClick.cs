@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Helpers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +13,7 @@ public class MouseClick : MonoBehaviour {
 	{
 		if (isStart)
 		{
-			SceneManager.LoadScene(1);
+			SceneManager.LoadScene(SceneHelper.Intro);
 		}
 		else if (isQuit)
 		{
