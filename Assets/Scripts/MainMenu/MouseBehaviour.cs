@@ -1,8 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Helpers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class MouseHover : MonoBehaviour {
+public class MouseBehaviour : MonoBehaviour {
+
+	public bool isStart;
+	public bool isQuit;
 
 	void Start()
 	{
@@ -17,5 +22,17 @@ public class MouseHover : MonoBehaviour {
 	void OnMouseExit()
 	{
 		GetComponent<Renderer>().material.color = Color.white;
+	}
+
+	void OnMouseUp()
+	{
+		if (isStart)
+		{
+			SceneManager.LoadScene(SceneHelper.Intro);
+		}
+		else if (isQuit)
+		{
+			Application.Quit();
+		}
 	}
 }
