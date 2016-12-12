@@ -616,6 +616,7 @@ MonoBehaviour:
   TopDownZoom: 50
   ShoulderHeight: 20
   ShoulderDistance: 20
+  CameraMultiplier: 1.333
 --- !u!114 &1113709139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -628,12 +629,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Home: {fileID: 0}
+  player: {fileID: 0}
+  MusicBuffer:
+    AmbientMudicClips: []
+    BattleMusicClips: []
   Settings:
     MuleFlyHeight: 10
     MuleDescentSpeed: 1
     MuleAscentSpeed: 1
     MuleDroppointDescentOffset: 1.5
+    MuleSpeed: 30
     PlayerHoverHeight: 1
+    PlayerRadarRange: 100
+  PlayerPickedUp: 0
 --- !u!1001 &1177810918
 Prefab:
   m_ObjectHideFlags: 0
@@ -709,6 +717,48 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!1001 &1244345278
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4598031714172078, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 328.1344
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598031714172078, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598031714172078, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 248.59383
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598031714172078, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598031714172078, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598031714172078, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598031714172078, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4598031714172078, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1260204953
 Prefab:
   m_ObjectHideFlags: 0
