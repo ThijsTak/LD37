@@ -135,10 +135,10 @@ namespace Units
 				ActivateGrab();
 			}
 
-			if (Input.GetButtonDown("Order"))
-			{
-				ActivateOrder();
-			}
+			//if (Input.GetButtonDown("Order"))
+			//{
+			//	ActivateOrder();
+			//}
 
 			UpdateTractor();
 		}
@@ -228,7 +228,7 @@ namespace Units
 			foreach (Collider o in objects)
 			{
 				Collectable drag = o.GetComponent<Collectable>();
-				if (drag == null)
+				if (drag == null || drag.Type == Collectable.CollectableType.Player)
 				{
 					continue;
 				}
