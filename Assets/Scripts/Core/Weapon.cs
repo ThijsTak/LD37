@@ -55,7 +55,7 @@ namespace Core
 				Type);
 
 			owner.DrainEnergy(EnergyPerShot);
-			GlobalManager.Instance.StatCounter.TotalEnergyDrainedPlayer += EnergyPerShot;
+			StatCounter.Instance.TotalEnergyDrainedPlayer += EnergyPerShot;
 		}
 	}
 }

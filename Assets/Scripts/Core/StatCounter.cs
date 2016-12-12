@@ -12,10 +12,10 @@ namespace Core
 	[Serializable]
 	public class StatCounter : MonoBehaviour
 	{
-		public StatCounter()
-		{
-			Instance = this;
-		}
+		//public StatCounter()
+		//{
+		//	Instance = this;
+		//}
 
 		public static StatCounter Instance;
 
