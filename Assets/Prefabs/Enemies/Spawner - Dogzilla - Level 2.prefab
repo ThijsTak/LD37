@@ -9,49 +9,49 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1579189813404394}
+  m_RootGameObject: {fileID: 1476298625049870}
   m_IsPrefabParent: 1
---- !u!1 &1579189813404394
+--- !u!1 &1476298625049870
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4775243849686592}
-  - component: {fileID: 114572729140536018}
+  - component: {fileID: 4436345759792686}
+  - component: {fileID: 114582961075737454}
   m_Layer: 9
-  m_Name: Spawner - Armonica
+  m_Name: Spawner - Dogzilla - Level 2
   m_TagString: Untagged
-  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4775243849686592
+--- !u!4 &4436345759792686
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1579189813404394}
+  m_GameObject: {fileID: 1476298625049870}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 335.7, y: 3.66, z: 441.8}
+  m_LocalPosition: {x: 545.2264, y: 2.7945814, z: 354.00198}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114572729140536018
+--- !u!114 &114582961075737454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1579189813404394}
+  m_GameObject: {fileID: 1476298625049870}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e869e67dc9daee4792c7f2e80548fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BaseMonster: {fileID: 114271086131325626, guid: 9f337c4e277aa584ea457c706af8f6f2,
+  BaseMonster: {fileID: 114265772895055962, guid: 871cc79a13bbd844ebb52e72ea4c5e1c,
     type: 2}
   NumberPerGroup: {x: 2, y: 5}
   radius: 45

@@ -106,7 +106,9 @@ namespace Units
 				+ (HybernationModule ? HybernationAdditionalDrainPerMinute : 0.0f)
 				- (TotalNumberOfPandiCorns * EnergyPerMinutePerPandiCorn);
 
-			DrainEnergy((totalEnergyDrainPerMinute / 60) * Time.fixedDeltaTime);
+			var energyDrained = (totalEnergyDrainPerMinute / 60) * Time.fixedDeltaTime;
+			DrainEnergy(energyDrained);
+			GlobalManager.Instance.StatCounter.TotalEnergyDrainedBase += energyDrained;
 		}
 	}
 

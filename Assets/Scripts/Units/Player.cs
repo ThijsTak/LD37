@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Helpers;
+﻿using System.Runtime.CompilerServices;
+using Assets.Scripts.Helpers;
 using Behaviours;
 using Helpers;
 using Core;
@@ -143,8 +144,9 @@ namespace Units
 				TotalEnergyDrain = TotalEnergyDrain + TractorEnergyDrain;
 			}
 
-
-			Energy.ChangeValue(-TotalEnergyDrain * Time.deltaTime);
+			var drain = TotalEnergyDrain * Time.fixedDeltaTime;
+			Energy.ChangeValue(-drain);
+			GlobalManager.Instance.StatCounter.TotalEnergyDrainedPlayer += drain;
 		}
 
 		/// <summary>
@@ -255,7 +257,7 @@ namespace Units
 
 				TractorSystem.Target = null;
 				TractorSystem.Active = false;
-				
+
 				return;
 			}
 
