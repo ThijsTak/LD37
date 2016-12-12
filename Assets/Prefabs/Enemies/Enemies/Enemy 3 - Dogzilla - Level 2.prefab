@@ -705,6 +705,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 20
   Force: 150
+  InvincibilityTime: 1000
 --- !u!114 &114472644438811522
 MonoBehaviour:
   m_ObjectHideFlags: 1
