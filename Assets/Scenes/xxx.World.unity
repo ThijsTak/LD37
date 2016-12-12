@@ -2017,7 +2017,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 46b2db91f8fc54d6497eef4f5d23fe20, type: 3}
     - {fileID: 8300000, guid: 4830dfb6acb2d45a3be2300052c72d8a, type: 3}
   Settings:
-    MuleFlyHeight: 15
+    MuleFlyHeight: 30
     MuleDescentSpeed: 5
     MuleAscentSpeed: 5
     MuleDroppointDescentOffset: 3

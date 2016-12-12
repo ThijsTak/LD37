@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 54209106066516250}
   m_Layer: 0
   m_Name: Mule
-  m_TagString: Untagged
+  m_TagString: Mule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

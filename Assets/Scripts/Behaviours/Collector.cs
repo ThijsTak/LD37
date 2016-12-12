@@ -48,6 +48,8 @@ namespace Behaviours
 						break;
 					case Collectable.CollectableType.Player:
 						return;
+					case Collectable.CollectableType.FauxHybernation:
+						return;
 				}
 
 				collider.gameObject.SendMessage("Death");

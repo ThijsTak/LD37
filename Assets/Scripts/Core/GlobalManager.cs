@@ -5,6 +5,7 @@ using Behaviours;
 using Helpers;
 using Units;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Core
 {
@@ -30,10 +31,13 @@ namespace Core
 		void Update()
 		{
 			AssignOrders();
-			if (player.GetEnergy() > 0)
+			if (player.GetEnergy() > 0) 
 			{
 				PlayerPickedUp = false;
 			}
+
+			CheckForVictory();
+			CheckForDefeat();
 		}
 
 		public void RegisterMule(Mule mule)
@@ -99,6 +103,22 @@ namespace Core
 			}
 		}
 
+		void CheckForVictory()
+		{
+			if (Home.GetShipComponentsState().Count(s => s.IsExisting) == 6)
+			{
+				// Ok, all components have been found.
+				SceneManager.LoadScene(SceneHelper.Victory);
+			}
+		}
 
+		void CheckForDefeat()
+		{
+			if (Home.Energy.Current == 0)
+			{
+				SceneManager.LoadScene(SceneHelper.GameOver);
+			}
+		}
 	}
 }
+

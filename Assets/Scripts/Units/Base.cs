@@ -55,7 +55,7 @@ namespace Units
 			NavigationMesh.SetActive(Navigation);
 			EnergyCodeMesh.SetActive(EnergyCore);
 			DeflectorMesh.SetActive(Deflector);
-			EnergyUpdare();
+			EnergyUpdate();
 		}
 
 		void OnTriggerEnter(Collider collider)
@@ -92,7 +92,7 @@ namespace Units
 			}
 		}
 
-		void EnergyUpdare()
+		void EnergyUpdate()
 		{
 			totalEnergyDrainPerMinute =
 				BaseEnegyDrainPerMinute

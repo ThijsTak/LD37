@@ -15,7 +15,7 @@ namespace Units
 	public class Player : BaseUnit
 	{
 		[SerializeField]
-		TractorSystem TractorSystem = new TractorSystem();
+		public TractorSystem TractorSystem = new TractorSystem();
 		[SerializeField]
 		private Weapon Stunner;
 		[SerializeField]
@@ -30,6 +30,10 @@ namespace Units
 		// Prefetched components.
 		public Rigidbody body;
 		private LineRenderer tractorLine;
+		public bool CanBoost = true;
+		public float BoostMulieplier = 2.0f;
+
+		Vector2 tractOffset = Vector2.zero;
 
 		/// <summary>
 		/// Initialize this instance.
@@ -70,7 +74,7 @@ namespace Units
 				{
 					transform.position = new Vector3(
 						transform.position.x,
-						HeightHelper.GetHeightFromTerrain(transform.position) -1.5f,
+						HeightHelper.GetHeightFromTerrain(transform.position) - 1.5f,
 						transform.position.z);
 				}
 				return;
@@ -116,7 +120,8 @@ namespace Units
 
 			// Update speed.
 			Vector3 movement = transform.rotation * (Vector3.forward * Input.GetAxis("Vertical"));
-			body.velocity += movement * movementMultiplier;
+			body.velocity += movement * movementMultiplier *
+				(CanBoost && Input.GetButton("Boost") ? BoostMulieplier : 1);
 			transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * turnMultiplier);
 
 			// Now check the actions.
@@ -135,10 +140,10 @@ namespace Units
 				ActivateGrab();
 			}
 
-			if (Input.GetButtonDown("Order"))
-			{
-				ActivateOrder();
-			}
+			//if (Input.GetButtonDown("Order"))
+			//{
+			//	ActivateOrder();
+			//}
 
 			UpdateTractor();
 		}
@@ -228,7 +233,7 @@ namespace Units
 			foreach (Collider o in objects)
 			{
 				Collectable drag = o.GetComponent<Collectable>();
-				if (drag == null)
+				if (drag == null || drag.Type == Collectable.CollectableType.Player)
 				{
 					continue;
 				}
@@ -246,8 +251,11 @@ namespace Units
 		void UpdateTractor()
 		{
 			tractorLine.enabled = TractorSystem.Active;
-			tractorLine.SetPosition(0, transform.position);
+			tractorLine.SetPosition(0, transform.position + Vector3.up);
 			tractorLine.SetPosition(1, TractorSystem.Target != null ? TractorSystem.Target.position : transform.position);
+
+			tractOffset = tractOffset + (Vector2.right * Time.deltaTime);
+			tractorLine.material.SetTextureOffset("_MainTex", tractOffset);
 
 			if (TractorSystem.Active)
 			{
