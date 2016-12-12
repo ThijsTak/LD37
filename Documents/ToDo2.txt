@@ -4,9 +4,9 @@
    v Pickup (spawn on death)
   v (T) Enemies
    v Various method
-  - (T) Timer on walk enemies
+  v (T) Timer on walk enemies
   - (W) Extract components
-  - (T) Sound effects
+  v (T) Sound effects
 
  - Must for later -
   - Gameplay
@@ -20,3 +20,4 @@
    
    Nice
    ~ (P) Tutorial
+   - Fix Mule Pickup.

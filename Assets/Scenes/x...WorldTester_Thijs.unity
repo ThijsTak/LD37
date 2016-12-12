@@ -459,6 +459,91 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 225.31445, z: 2.145996}
   m_Center: {x: 0, y: 112.15723, z: -0.57299805}
+--- !u!1 &121966203 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1680584424436332, guid: af1116a0fb5947646967172d47a599d3,
+    type: 2}
+  m_PrefabInternal: {fileID: 961893642}
+--- !u!82 &121966204
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 121966203}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!4 &147480382 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4775243849686592, guid: 7ddf95b26edd6474ba4f294a54fb5193,
@@ -1704,6 +1789,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114209397860511304, guid: af1116a0fb5947646967172d47a599d3,
+        type: 2}
+      propertyPath: WarningSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 33f311d14db5b4529bb1e8b9f6d8550d, type: 3}
+    - target: {fileID: 114209397860511304, guid: af1116a0fb5947646967172d47a599d3,
+        type: 2}
+      propertyPath: NoPowerSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e6d6b470329124458a61bb5f364e03fb, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af1116a0fb5947646967172d47a599d3, type: 2}
   m_IsPrefabParent: 0
@@ -2980,8 +3075,10 @@ MonoBehaviour:
     MuleAscentSpeed: 10
     MuleDroppointDescentOffset: 4
     MuleSpeed: 45
+    MuleRotationSpeed: 150
     PlayerHoverHeight: 1
     PlayerRadarRange: 100
+    EnemyTimersBeforeNewOrderInSeconds: 10
   PlayerPickedUp: 0
 --- !u!1 &1956995296 stripped
 GameObject:

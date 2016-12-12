@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114681637060086230}
   - component: {fileID: 54921156897180416}
   - component: {fileID: 114947744713938106}
+  - component: {fileID: 114139983025058642}
   m_Layer: 8
   m_Name: Energy
   m_TagString: Energy
@@ -701,6 +702,19 @@ MonoBehaviour:
   Parent: {fileID: 4668586415855336}
   RotateDirection: {x: 2, y: 2, z: 0}
   Speed: 500
+--- !u!114 &114139983025058642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1405529877508942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2c3f256912b22c408fb3473907b3056, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Spawn: {fileID: 1433473372874664, guid: d240f8eb785aeb04ba3cdcb9966ec987, type: 2}
+  numberToSpawn: 1
 --- !u!114 &114295747005289124
 MonoBehaviour:
   m_ObjectHideFlags: 1

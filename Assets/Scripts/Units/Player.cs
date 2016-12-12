@@ -28,6 +28,10 @@ namespace Units
 		private float defaultDrag = 0;
 
 		public Light[] Lights;
+		public AudioClip WarningSound;
+		public AudioClip NoPowerSound;
+
+		private AudioSource source;
 
 		public float EnergyDrainMovementPerSecond = 0.1f;
 		public float BoostEnergyDrainMultiplier = 2.5f;
@@ -53,6 +57,8 @@ namespace Units
 		void Start()
 		{
 			GlobalManager.Instance.player = this;
+
+			source = GetComponent<AudioSource>();
 
 			body = GetComponent<Rigidbody>();
 			if (body == null)
@@ -345,19 +351,38 @@ namespace Units
 			if (Energy.Current == 0)
 			{
 				SetLights(0);
+				if (source.clip != NoPowerSound)
+				{
+					source.Stop();
+					source.clip = NoPowerSound;
+					source.loop = false;
+					source.volume = 1;
+					source.Play();
+				}
+
 				return;
 			}
-			float percent = Energy.Current/Energy.Max;
-            if (percent <= 0.25f)
+			float percent = Energy.Current / Energy.Max;
+			if (percent <= 0.25f && percent > 0)
 			{
 				if (lightTimer < 0)
 				{
 					SetLights(Random.Range(0, lightIntencity));
 					lightTimer = Random.Range(lightTimeFactor.x, lightTimeFactor.y) + percent;
-					return;
+					if (source.clip != WarningSound)
+					{
+						source.Stop();
+						source.clip = WarningSound;
+						source.loop = true;
+						source.volume = 0.1f;
+						source.Play();
+					}
 				}
+
+				return;
 			}
 
+			source.Stop();
 			SetLights(lightIntencity);
 		}
 
