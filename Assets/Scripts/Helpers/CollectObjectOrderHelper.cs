@@ -9,6 +9,8 @@ namespace Helpers
 	{
 		public static void CreateOrder(Units.Mule mule, Collectable target, Base home)
 		{
+			if (mule == null || target == null) return;
+
 			mule.Orders.Enqueue(new GotoPoint(target.transform));
 			mule.Orders.Enqueue(new Descend(target.transform.position.y));
 			mule.Orders.Enqueue(new GrabCargo(target));

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Assets.Scripts.Core;
 using Behaviours;
 using Helpers;
 using Units;
@@ -12,11 +13,14 @@ namespace Core
 		public static GlobalManager Instance;
 		public Base Home;
 		public Player player;
+		public MusicBuffer MusicBuffer;
 		Queue<Collectable> muleOrderQueue = new Queue<Collectable>();
 		List<Collectable> assignedItems = new List<Collectable>();
 		public BasicSettings Settings = new BasicSettings();
 		List<Mule> mules = new List<Mule>(10);
 		List<Group> SpawnedGroups = new List<Group>(20);
+
+		public bool PlayerPickedUp = false;
 
 		public void Awake()
 		{
@@ -26,6 +30,10 @@ namespace Core
 		void Update()
 		{
 			AssignOrders();
+			if (player.GetEnergy() > 0)
+			{
+				PlayerPickedUp = false;
+			}
 		}
 
 		public void RegisterMule(Mule mule)
@@ -64,13 +72,21 @@ namespace Core
 
 		void AssignOrders()
 		{
-			while (muleOrderQueue.Count > 0)
+			while (muleOrderQueue.Count > 0 || player.Energy.Current == 0)
 			{
 				foreach (Mule mule in mules)
 				{
 					if (mule.Orders.Any())
 					{
 						continue;
+					}
+
+					if (player.Energy.Current == 0 && !PlayerPickedUp)
+					{
+						var pItem = player.gameObject.GetComponent<Collectable>();
+						CollectObjectOrderHelper.CreateOrder(mule, pItem, Home);
+						PlayerPickedUp = true;
+						return;
 					}
 
 					var item = GetFromQueue();
