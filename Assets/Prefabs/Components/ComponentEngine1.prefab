@@ -53,8 +53,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1132739634534232}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.82, y: 1.32, z: 19.18}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 516.0165, y: 4.51, z: 345.47897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4376232601773574}
@@ -154,6 +154,7 @@ MonoBehaviour:
   DefaultDrag: 15
   EnergyValue: 10
   Type: 2
+  AutoRegister: 0
 --- !u!135 &135324069009540656
 SphereCollider:
   m_ObjectHideFlags: 1

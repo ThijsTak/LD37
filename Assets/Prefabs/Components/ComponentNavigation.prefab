@@ -26,7 +26,7 @@ GameObject:
   m_Layer: 8
   m_Name: ComponentNavigation
   m_TagString: Components
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -53,8 +53,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1467826700673844}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.82, y: 1.32, z: 19.18}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 533.28754, y: 5.48, z: 714.8889}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4564069638013606}
@@ -154,6 +154,7 @@ MonoBehaviour:
   DefaultDrag: 15
   EnergyValue: 10
   Type: 5
+  AutoRegister: 0
 --- !u!135 &135748011501608112
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -13,10 +13,13 @@ ModelImporter:
     400004: //RootNode
     2300000: HybernationModuleBottom
     2300002: HybernationModuleTop
+    2300004: //RootNode
     3300000: HybernationModuleBottom
     3300002: HybernationModuleTop
+    3300004: //RootNode
     4300000: HybernationModuleTop
     4300002: HybernationModuleBottom
+    4300004: HybernationModule
     7400000: Default Take
     9500000: //RootNode
   materials:

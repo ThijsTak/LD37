@@ -43,7 +43,7 @@ GameObject:
   m_Layer: 8
   m_Name: ComponentDeflector
   m_TagString: Components
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -66,8 +66,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1982188346182406}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.82, y: 1.32, z: 19.18}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 338.6, y: 7.58, z: 1229.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4117220854326808}
@@ -166,3 +166,4 @@ MonoBehaviour:
   DefaultDrag: 15
   EnergyValue: 10
   Type: 6
+  AutoRegister: 0
