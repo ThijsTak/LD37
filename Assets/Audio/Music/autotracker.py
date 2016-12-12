@@ -939,8 +939,8 @@ SMP_SNARE = itf.smp_add(Sample_NoiseHit(name = "NH Snare", decay = 0.12, filtl =
 print "Generating patterns"
 strat = Strategy_Main(random.randint(50,50+12-1)+12, Key_Minor if random.random() < 0.6 else Key_Major, 128, 32)
 strat.gen_add(Generator_Drums(s_kick = SMP_KICK, s_snare = SMP_SNARE, s_hhc = SMP_HHC, s_hho = SMP_HHO))
-#strat.gen_add(Generator_AmbientMelody(smp = SMP_GUITAR))
-strat.gen_add(Generator_AmbientMelody(smp = SMP_HOOVER))
+strat.gen_add(Generator_AmbientMelody(smp = SMP_GUITAR))
+# strat.gen_add(Generator_AmbientMelody(smp = SMP_HOOVER))
 # strat.gen_add(Generator_Bass(smp = SMP_BASS))
 strat.gen_add(Generator_Bass(smp = SMP_BASS))
 for i in xrange(6):
