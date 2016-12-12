@@ -22,12 +22,19 @@ namespace Behaviours
 			Engine2,
 			Hybernation,
 			Navigation,
-			Deflector
+			Deflector,
+			Player
 		}
 
 		public void Start()
 		{
 			Body = GetComponent<Rigidbody>();
+
+			if (Type == CollectableType.Player)
+			{
+				return;
+			}
+
 			Body.useGravity = Transporter == null;
 			Body.drag = Transporter == null ? DefaultDrag : 0;
 

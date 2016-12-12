@@ -64,6 +64,18 @@ namespace Units
 		/// </summary>
 		void Update()
 		{
+			if (Energy.Current == 0)
+			{
+				if (!GlobalManager.Instance.PlayerPickedUp)
+				{
+					transform.position = new Vector3(
+						transform.position.x,
+						HeightHelper.GetHeightFromTerrain(transform.position) -1.5f,
+						transform.position.z);
+				}
+				return;
+			}
+
 			// Update the weapons.
 			if (Blaster != null)
 			{
@@ -87,6 +99,11 @@ namespace Units
 		/// </summary>
 		void FixedUpdate()
 		{
+			if (Energy.Current == 0)
+			{
+				return;
+			}
+
 			UpdateInput();
 		}
 
@@ -158,7 +175,7 @@ namespace Units
 		/// <summary>
 		/// Shoots the weapon.
 		/// </summary>
-		void ShootWeapon() 
+		void ShootWeapon()
 		{
 			if (Blaster != null)
 			{
@@ -171,14 +188,14 @@ namespace Units
 				if (Physics.Raycast(ray, out hit))
 				{
 					Transform objectHit = hit.transform;
-					hitPoint = hit.point - transform.position;
+					hitPoint = hit.point;
 				}
 				else
 				{
 					hitPoint = transform.rotation * Vector3.forward;
 				}
 
-				Blaster.Shoot(hitPoint.normalized);
+				Blaster.Shoot(hitPoint);
 			}
 		}
 

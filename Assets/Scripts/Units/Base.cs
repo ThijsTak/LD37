@@ -19,6 +19,19 @@ namespace Units
 		public bool EnergyCore;
 		public bool HybernationModule;
 
+		public float RechanrgePlayerPerSecond = 25.0f;
+		public float BaseEnegyDrainPerMinute = 100.0f;
+		public float EngineAdditionalDrainPerMinute = 0.0f;
+		public float NavigationAdditionalDrainPerMinute = 10.0f;
+		public float DeflectorAdditionalDrainPerMinute = 15.0f;
+		public float EnergyCodeAdditionalDrainPerMinute = -50.0f;
+		public float HybernationAdditionalDrainPerMinute = 50.0f;
+		public float EnergyPerMinutePerPandiCorn = 5.0f;
+
+		public int TotalNumberOfPandiCorns = 0;
+
+		public float totalEnergyDrainPerMinute;
+
 		public GameObject RoofShip;
 		public GameObject RoofHybernation;
 		public GameObject BottomHybernation;
@@ -42,6 +55,7 @@ namespace Units
 			NavigationMesh.SetActive(Navigation);
 			EnergyCodeMesh.SetActive(EnergyCore);
 			DeflectorMesh.SetActive(Deflector);
+			EnergyUpdare();
 		}
 
 		void OnTriggerEnter(Collider collider)
@@ -76,6 +90,21 @@ namespace Units
 					RoofHybernation.SetActive(true);
 				}
 			}
+		}
+
+		void EnergyUpdare()
+		{
+			totalEnergyDrainPerMinute =
+				BaseEnegyDrainPerMinute
+				+ (Engine1 ? EngineAdditionalDrainPerMinute : 0.0f)
+				+ (Engine2 ? EngineAdditionalDrainPerMinute : 0.0f)
+				+ (Navigation ? NavigationAdditionalDrainPerMinute : 0.0f)
+				+ (Deflector ? DeflectorAdditionalDrainPerMinute : 0.0f)
+				+ (EnergyCore ? EnergyCodeAdditionalDrainPerMinute : 0.0f)
+				+ (HybernationModule ? HybernationAdditionalDrainPerMinute : 0.0f)
+				+ TotalNumberOfPandiCorns * EnergyPerMinutePerPandiCorn;
+
+			DrainEnergy((totalEnergyDrainPerMinute / 60) * Time.fixedDeltaTime);
 		}
 	}
 

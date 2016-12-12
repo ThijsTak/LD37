@@ -951,6 +951,16 @@ MonoBehaviour:
                   CurrentState: 0
                   AwareOfPlayer: 0
                   WalkTarget: {x: 0, y: 0, z: 0}
+                  MaxRoamingRadius: 50
+                owner: {fileID: 0}
+              MaxRoamingRadius: 50
+            owner: {fileID: 0}
+          MaxRoamingRadius: 50
+        owner: {fileID: 0}
+      MaxRoamingRadius: 50
+    owner: {fileID: 0}
+  MovementSpeed: 5
+  body: {fileID: 0}
 --- !u!114 &114400971504725344
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -962,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edbf8f2a3e50ed14c9c3a80ccd9c7a77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 2.5
+  Damage: 25
   Force: 75
 --- !u!114 &114583714101143374
 MonoBehaviour:
