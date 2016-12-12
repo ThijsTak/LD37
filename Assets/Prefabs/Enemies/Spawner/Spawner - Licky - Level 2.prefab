@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseMonster: {fileID: 114615086054644840, guid: 438d2837f7ade004b83cfe3a38da711f,
     type: 2}
-  NumberPerGroup: {x: 2, y: 5}
+  NumberPerGroup: {x: 3, y: 5}
   radius: 45
   maxNumberOfActiveGroups: 3
   secondsBetweenSpawns: 60

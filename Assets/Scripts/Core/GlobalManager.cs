@@ -6,6 +6,7 @@ using Helpers;
 using Units;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Core
 {
@@ -26,6 +27,8 @@ namespace Core
 		public GameObject MulePrefab;
 
 		private bool isGameRunning = true;
+
+		public Text PickupText;
 
 		public void Awake()
 		{
@@ -53,6 +56,22 @@ namespace Core
 			}
 
 			StatCounter.totalTime += Time.deltaTime;
+
+			if (player.Energy.Current == 0)
+			{
+				if (PlayerPickedUp)
+				{
+					PickupText.text = "Mule underway";
+				}
+				else
+				{
+					PickupText.text = "pickup pending";
+				}
+			}
+			else
+			{
+				PickupText.text = "";
+			}
 
 			CheckForVictory();
 			CheckForDefeat();

@@ -53,9 +53,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseMonster: {fileID: 114210381915199172, guid: 65db2f7e83f11ba48b40a6b9570cb129,
     type: 2}
-  NumberPerGroup: {x: 2, y: 5}
+  NumberPerGroup: {x: 1, y: 3}
   radius: 45
-  maxNumberOfActiveGroups: 3
+  maxNumberOfActiveGroups: 1
   secondsBetweenSpawns: 60
   maxDistanceOfPlayer: 0
   DefaultState: 2

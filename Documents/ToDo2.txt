@@ -46,7 +46,7 @@
    v Enemy respawn not working.
    v Increase radar range for powerups.
    v Track energy drain from weapon fire.
-   ~ Boost while dragging.
+   V Boost while dragging.
    - Shoot ahead on space.
-   - Permanant ping of dragged objects.
-   - Fix Spawner.
+   V Permanant ping of dragged objects.
+   V Fix Spawner.
