@@ -31,10 +31,13 @@ namespace Core
 		void Update()
 		{
 			AssignOrders();
-			if (player.GetEnergy() > 0)
+			if (player.GetEnergy() > 0) 
 			{
 				PlayerPickedUp = false;
 			}
+
+			CheckForVictory();
+			CheckForDefeat();
 		}
 
 		public void RegisterMule(Mule mule)

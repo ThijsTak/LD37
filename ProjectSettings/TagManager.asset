@@ -9,6 +9,7 @@ TagManager:
   - Energy
   - Base
   - Components
+  - Mule
   layers:
   - Default
   - TransparentFX
