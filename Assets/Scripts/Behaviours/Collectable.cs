@@ -23,7 +23,8 @@ namespace Behaviours
 			Hybernation,
 			Navigation,
 			Deflector,
-			Player
+			Player,
+			FauxHybernation
 		}
 
 		public void Start()
