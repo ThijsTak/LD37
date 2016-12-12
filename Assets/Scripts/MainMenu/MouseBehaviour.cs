@@ -14,7 +14,8 @@ public class MouseBehaviour : MonoBehaviour {
 		Static = 0,
 		Start = 1,
 		Quit = 2,
-		Main = 3
+		Main = 3,
+		Statistics = 4
 	}
 
 	void Start()
@@ -46,6 +47,9 @@ public class MouseBehaviour : MonoBehaviour {
 				return;
 			case ButtonType.Main:
 				SceneManager.LoadScene(SceneHelper.MainMenu);
+				break;
+			case ButtonType.Statistics:
+				SceneManager.LoadScene(SceneHelper.Statistics);
 				break;
 			default:
 				throw new ArgumentOutOfRangeException();

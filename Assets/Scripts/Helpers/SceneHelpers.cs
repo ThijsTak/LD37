@@ -12,5 +12,6 @@ namespace Helpers
 		public const int Game = 2;
 		public const int Victory = 3;
 		public const int GameOver = 4;
+		public const int Statistics = 5;
 	}
 }
