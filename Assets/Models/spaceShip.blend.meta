@@ -19,6 +19,7 @@ ModelImporter:
     100022: //RootNode
     100024: threatMill
     100026: TopShip
+    100028: Engine_000
     400000: BottomShip
     400002: Cockpit
     400004: Cube
@@ -33,6 +34,7 @@ ModelImporter:
     400022: //RootNode
     400024: threatMill
     400026: TopShip
+    400028: Engine_000
     2300000: BottomShip
     2300002: Cockpit
     2300004: Cube
@@ -46,6 +48,7 @@ ModelImporter:
     2300020: SkiPart
     2300022: threatMill
     2300024: TopShip
+    2300026: Engine_000
     3300000: BottomShip
     3300002: Cockpit
     3300004: Cube
@@ -59,6 +62,7 @@ ModelImporter:
     3300020: SkiPart
     3300022: threatMill
     3300024: TopShip
+    3300026: Engine_000
     4300000: HybernationModuleTop
     4300002: HybernationModuleBottom
     4300004: Eye
@@ -72,6 +76,7 @@ ModelImporter:
     4300020: threatMill
     4300022: TopShip
     4300024: Cube
+    4300026: Engine_000
     7400000: Default Take
     9500000: //RootNode
   materials:
