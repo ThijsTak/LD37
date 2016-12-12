@@ -268,7 +268,6 @@ namespace Units
 				return;
 			}
 
-			Vector3 p = MouseHelper.GetMousePosition();
 			foreach (Collider o in objects)
 			{
 				Collectable drag = o.GetComponent<Collectable>();
