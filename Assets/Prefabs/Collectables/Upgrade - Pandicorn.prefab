@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 65394649969518104}
   - component: {fileID: 114186929936928284}
   m_Layer: 8
-  m_Name: Pickup - Pandicorn
+  m_Name: Upgrade - Pandicorn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

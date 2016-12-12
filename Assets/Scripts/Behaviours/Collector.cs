@@ -53,6 +53,17 @@ namespace Behaviours
 					case Collectable.CollectableType.Pandicorn:
 						GlobalManager.Instance.Home.TotalNumberOfPandiCorns++;
 						break;
+					case Collectable.CollectableType.Mules:
+
+						break;
+					case Collectable.CollectableType.EnergyIncrease:
+						GlobalManager.Instance.player.Energy.Max +=
+							GlobalManager.Instance.Settings.EnergyGainPerUpgrade;
+						break;
+					case Collectable.CollectableType.Boost:
+						GlobalManager.Instance.player.BoostMulieplier +=
+							GlobalManager.Instance.Settings.BoostSpeedPerUpgrade;
+						break;
 				}
 
 				collider.gameObject.SendMessage("Death");
