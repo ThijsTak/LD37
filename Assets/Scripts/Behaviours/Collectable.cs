@@ -11,6 +11,7 @@ namespace Behaviours
 
 		public float EnergyValue = 10.0f;
 		public CollectableType Type = CollectableType.Energy;
+		public bool IsTagged = false;
 
 		public bool AutoRegister = false;
 

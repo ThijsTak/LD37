@@ -18,7 +18,9 @@ namespace Core
 
 		public bool IsAlive
 		{
-			get { return !Enemies.Any(e => e != null && e.gameObject.activeSelf) || owner != null; }
+			get { return 
+					!Enemies.Any(e => e != null && e.gameObject.activeSelf) 
+					&& owner != null; }
 		}
 
 		public void UpdateTask(Enemy enemy)

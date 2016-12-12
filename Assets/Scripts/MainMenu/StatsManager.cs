@@ -26,8 +26,9 @@ public class StatsManager : MonoBehaviour
 	void Start ()
 	{
 		GlobalManager manager = GlobalManager.Instance;
-		if (manager == null) return;
-		StatCounter statsObject = manager.StatCounter;
+		// if (manager == null) return;
+		// StatCounter statsObject = manager.StatCounter;
+		StatCounter statsObject = StatCounter.Instance;
 		switch (StatType)
 		{
 			case Stats.TotalTime:

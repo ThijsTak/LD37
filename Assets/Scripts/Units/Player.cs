@@ -161,7 +161,7 @@ namespace Units
 			// Update speed.
 			Vector3 movement = transform.rotation * (Vector3.forward * Input.GetAxis("Vertical"));
 			body.velocity += movement * movementMultiplier *
-				(CanBoost && Input.GetButton("Boost") && !TractorSystem.Active ? BoostMulieplier : 1);
+				(CanBoost && Input.GetButton("Boost") /*&& !TractorSystem.Active*/ ? BoostMulieplier : 1);
 			transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * turnMultiplier);
 
 			// Now check the actions.
@@ -247,13 +247,12 @@ namespace Units
 		/// <summary>
 		/// Activates the tractor beam.
 		/// </summary>
-		void ActivateGrab()
+		public void ActivateGrab()
 		{
-			if (this.GrabFrame == Time.frameCount) {
+			if (this.GrabFrame == Time.frameCount)
+			{
 				return;
 			}
-
-
 
 			if (TractorSystem.Active)
 			{
@@ -263,7 +262,8 @@ namespace Units
 					coll.Transporter = null;
 				}
 
-				if (TractorSystem.Target != null) {
+				if (TractorSystem.Target != null)
+				{
 					this.GrabFrame = Time.frameCount;
 				}
 
@@ -297,9 +297,11 @@ namespace Units
 				TractorSystem.Target = drag.gameObject.transform;
 				TractorSystem.TracRigidbody = drag.gameObject.GetComponent<Rigidbody>();
 				drag.Transporter = gameObject;
+				drag.IsTagged = true;
 			}
 
-			if (rx_counter > 0) {
+			if (rx_counter > 0)
+			{
 				this.GrabFrame = Time.frameCount;
 			}
 		}
@@ -330,9 +332,15 @@ namespace Units
 				if (dist > TractorSystem.Radius)
 				{
 					Vector3 direction = (transform.position - TractorSystem.Target.position).normalized;
-					TractorSystem.TracRigidbody.velocity = direction * TractorSystem.Power;
-					body.drag = defaultDrag + ((transform.position - TractorSystem.Target.position).sqrMagnitude / TractorSystem.Power);
-					return;
+					TractorSystem.TracRigidbody.velocity = direction 
+						* TractorSystem.Power 
+						* (Input.GetButton("Boost") ? BoostMulieplier : 1);
+
+					body.drag = defaultDrag
+						+ ((transform.position - TractorSystem.Target.position).sqrMagnitude
+						/ TractorSystem.Power);
+					// (Input.GetButton("Boost") ? BoostMulieplier : 1)
+                    return;
 				}
 			}
 

@@ -39,12 +39,13 @@
 
    
    Issues:
-   - Autodrop collectables.
+   v Autodrop collectables.
    - Pickup noteification.
    - Attack of the dogzilla.
-   - Mule pickip height.
-   - Enemy respawn not working.
-   - Increase radar range for powerups.
-   - Track energy drain from weapon fire.
-   - Boost while dragging.
+    - Mule pickip height.
+   v Enemy respawn not working.
+   v Increase radar range for powerups.
+   v Track energy drain from weapon fire.
+   ~ Boost while dragging.
    - Shoot ahead on space.
+   - Permanant ping of dragged objects.

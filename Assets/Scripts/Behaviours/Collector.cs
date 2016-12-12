@@ -20,9 +20,16 @@ namespace Behaviours
 				player.AddEnergy(drain);
 			}
 
+			player = GlobalManager.Instance.player;
 			Collectable drag = collider.gameObject.GetComponent<Collectable>();
-			if (drag != null && drag.Transporter == null)
+			if (drag != null && (drag.Transporter == null || drag.Transporter == player.gameObject))
 			{
+				if (drag.Transporter == player.gameObject)
+				{
+					player.TractorSystem.Target = null;
+					player.TractorSystem.Active = false;
+				}
+
 				switch (drag.Type)
 				{
 					case Collectable.CollectableType.Energy:

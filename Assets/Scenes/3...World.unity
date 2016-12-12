@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0.45
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -1983,16 +1983,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114209397860511304, guid: af1116a0fb5947646967172d47a599d3,
-        type: 2}
-      propertyPath: TractorEnergyDrain
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114209397860511304, guid: af1116a0fb5947646967172d47a599d3,
-        type: 2}
-      propertyPath: TractorSystem.Power
-      value: 7
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: af1116a0fb5947646967172d47a599d3, type: 2}
   m_IsPrefabParent: 0
@@ -2378,6 +2368,11 @@ Prefab:
     - target: {fileID: 1607753235344438, guid: 239ed787b0060ab45a543de31a4b56e7, type: 2}
       propertyPath: m_Name
       value: Spawner - Licky - Level 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114670890208126574, guid: 239ed787b0060ab45a543de31a4b56e7,
+        type: 2}
+      propertyPath: secondsBetweenSpawns
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 239ed787b0060ab45a543de31a4b56e7, type: 2}
@@ -3259,7 +3254,7 @@ MonoBehaviour:
     IsEnabled: 1
   - Name: Components
     RadarPip: {fileID: 1201478092107726, guid: 9dd66f17f7c9e48048550c23a4a6921f, type: 2}
-    MaxDistance: 50
+    MaxDistance: 150
     IgnoreMaxDistance: 0
     IsEnabled: 1
   - Name: Energy

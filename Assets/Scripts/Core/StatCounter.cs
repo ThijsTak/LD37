@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
 using System.Text;
 
@@ -8,6 +9,13 @@ namespace Core
 	[Serializable]
 	public class StatCounter
 	{
+		public StatCounter()
+		{
+			Instance = this;
+		}
+
+		public static StatCounter Instance;
+
 		public float totalTime = 0.0f;
 		public int PandiCorns = 0;
 		public int Boosts = 0;
