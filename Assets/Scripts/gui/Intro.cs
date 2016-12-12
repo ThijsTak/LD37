@@ -2,6 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Core;
+using Helpers;
+using UnityEngine.SceneManagement;
 
 public class Intro : MonoBehaviour {
 	public UnityEngine.UI.RawImage Target;
@@ -36,12 +39,12 @@ public class Intro : MonoBehaviour {
 
 	void LoadGameplayScene ()
 	{
-		throw new NotImplementedException ();
+		SceneManager.LoadScene(SceneHelper.Game);
 	}
 
 	void LoadMainMenuScene ()
 	{
-		throw new NotImplementedException ();
+		SceneManager.LoadScene(SceneHelper.MainMenu);
 	}
 	
 	// Update is called once per frame
