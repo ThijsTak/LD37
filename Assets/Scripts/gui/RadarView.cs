@@ -7,8 +7,6 @@ using UnityEngine;
 
 public class RadarView : MonoBehaviour {
 	public RadarCategory[] Categories;
-
-
 	private List<RadarItem> _Items = new List<RadarItem> ();
 	const float RadarViewSize = 110; // The image is 128 and we have a border of a few pixels.
 
@@ -34,28 +32,34 @@ public class RadarView : MonoBehaviour {
 		// Clean the list since everything is scheduled for delete anyway.
 		_Items.Clear ();
 
-		var radarRange = Core.GlobalManager.Instance.Settings.PlayerRadarRange;
+
 		var radarSource = Core.GlobalManager.Instance.player;
 		var position = radarSource.transform.position;
 		var rotation = radarSource.transform.rotation;
 
-		foreach (var category in Categories) {
+		foreach (var category in Categories.Reverse()) {
+			var radarRange = Mathf.Clamp(category.MaxDistance, 0, Core.GlobalManager.Instance.Settings.PlayerRadarRange);
 			var tagged_objects = GameObject.FindGameObjectsWithTag (category.Name);
 			foreach (var tagged_object in tagged_objects) {
 				var offset = position - tagged_object.transform.position;
 
-				if (offset.magnitude > radarRange) {
+				if (offset.magnitude > radarRange && !category.IgnoreMaxDistance) {
 					continue;
+				} else if (offset.magnitude > radarRange) {
+					offset = (offset / offset.magnitude) * Core.GlobalManager.Instance.Settings.PlayerRadarRange;
 				}
+
+				// Scale the offset to the radarRange
+
 
 				var item = new RadarItem ();
 
 				// We need to rotate the offset based on the players current 
 				offset = Quaternion.Inverse(rotation) * offset;
-				var offset_nav =  -new Vector3(offset.x, offset.z, 0);
+				var offset_nav = -new Vector3(offset.x, offset.z, 0);
 
 				// Scale the image based on the radar view size
-				offset_nav *= (RadarViewSize / radarRange); 
+				offset_nav *= (RadarViewSize / Core.GlobalManager.Instance.Settings.PlayerRadarRange); 
 
 				var parent = this.gameObject.GetComponent<RectTransform> ();
 				var new_position = parent.position + offset_nav;

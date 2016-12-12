@@ -20,4 +20,9 @@ public class RadarCategory{
 	/// The maximum distance will be ignored.
 	/// </summary>
 	public bool IgnoreMaxDistance = false;
+
+	/// <summary>
+	/// Will this pip be shown on the radar?
+	/// </summary>
+	public bool IsEnabled = true;
 }

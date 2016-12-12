@@ -367,6 +367,24 @@ MonoBehaviour:
   Categories:
   - Name: Enemy
     RadarPip: {fileID: 1201478092107726, guid: 8bc926533311f4fb2ae619f35e9d766c, type: 2}
+    MaxDistance: 100
+    IgnoreMaxDistance: 0
+    IsEnabled: 1
+  - Name: Base
+    RadarPip: {fileID: 1201478092107726, guid: 7419896985bb648d9b8f65c04c2651ef, type: 2}
+    MaxDistance: 100
+    IgnoreMaxDistance: 1
+    IsEnabled: 1
+  - Name: Components
+    RadarPip: {fileID: 1201478092107726, guid: 9dd66f17f7c9e48048550c23a4a6921f, type: 2}
+    MaxDistance: 50
+    IgnoreMaxDistance: 0
+    IsEnabled: 1
+  - Name: Energy
+    RadarPip: {fileID: 1201478092107726, guid: 2860bf2fe943c4d32b298b0b8c7e1b65, type: 2}
+    MaxDistance: 100
+    IgnoreMaxDistance: 0
+    IsEnabled: 1
 --- !u!114 &114824569990752582
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -549,7 +567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 130.7, y: -28.9}
+  m_AnchoredPosition: {x: 130.69995, y: -28.900024}
   m_SizeDelta: {x: 216.4, y: 22.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224983044344793666

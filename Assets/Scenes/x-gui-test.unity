@@ -463,6 +463,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114719773915040260, guid: 051df08bb97814a9c9a6a48812c22824,
+        type: 2}
+      propertyPath: Categories.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224529694889055788, guid: 051df08bb97814a9c9a6a48812c22824,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -558,6 +563,32 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1113709136}
+    - target: {fileID: 114719773915040260, guid: 051df08bb97814a9c9a6a48812c22824,
+        type: 2}
+      propertyPath: Categories.Array.data[1].Name
+      value: Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 114719773915040260, guid: 051df08bb97814a9c9a6a48812c22824,
+        type: 2}
+      propertyPath: Categories.Array.data[1].RadarPip
+      value: 
+      objectReference: {fileID: 1201478092107726, guid: 7419896985bb648d9b8f65c04c2651ef,
+        type: 2}
+    - target: {fileID: 114719773915040260, guid: 051df08bb97814a9c9a6a48812c22824,
+        type: 2}
+      propertyPath: Categories.Array.data[1].MaxDistance
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114719773915040260, guid: 051df08bb97814a9c9a6a48812c22824,
+        type: 2}
+      propertyPath: Categories.Array.data[1].IsEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114719773915040260, guid: 051df08bb97814a9c9a6a48812c22824,
+        type: 2}
+      propertyPath: Categories.Array.data[1].IgnoreMaxDistance
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 051df08bb97814a9c9a6a48812c22824, type: 2}
   m_IsPrefabParent: 0
@@ -666,6 +697,9 @@ MonoBehaviour:
   TopDownZoom: 50
   ShoulderHeight: 10
   ShoulderDistance: 15
+  CameraMultiplier: 1.333
+  TractorMultiplierDistance: 2
+  TractorMulieplierHeight: 1.5
 --- !u!114 &1113709139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -679,6 +713,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Home: {fileID: 0}
   player: {fileID: 0}
+  MusicBuffer:
+    AmbientMudicClips: []
+    BattleMusicClips: []
   Settings:
     MuleFlyHeight: 10
     MuleDescentSpeed: 1
@@ -687,6 +724,7 @@ MonoBehaviour:
     MuleSpeed: 30
     PlayerHoverHeight: 1
     PlayerRadarRange: 100
+  PlayerPickedUp: 0
 --- !u!1 &1206121099 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100012, guid: 80ca981a2966a0143a534499f552fd3b, type: 3}
