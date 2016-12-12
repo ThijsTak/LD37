@@ -6,10 +6,18 @@ using System.Linq;
 using System.Text;
 
 [Serializable]	
-public struct RadarCategory{
-	[SerializeField]
+public class RadarCategory{
 	public string Name;
 
-	[SerializeField]
 	public GameObject RadarPip;
+
+	/// <summary>
+	/// The maximum distance the radar can see things.
+	/// </summary>
+	public float MaxDistance = 100.0f;
+
+	/// <summary>
+	/// The maximum distance will be ignored.
+	/// </summary>
+	public bool IgnoreMaxDistance = false;
 }
