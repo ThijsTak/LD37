@@ -30,6 +30,8 @@ namespace Units
 		// Prefetched components.
 		public Rigidbody body;
 		private LineRenderer tractorLine;
+		public bool CanBoost = true;
+		public float BoostMulieplier = 2.0f;
 
 		Vector2 tractOffset = Vector2.zero;
 
@@ -118,7 +120,8 @@ namespace Units
 
 			// Update speed.
 			Vector3 movement = transform.rotation * (Vector3.forward * Input.GetAxis("Vertical"));
-			body.velocity += movement * movementMultiplier;
+			body.velocity += movement * movementMultiplier *
+				(CanBoost && Input.GetButton("Boost") ? BoostMulieplier : 1);
 			transform.Rotate(Vector3.up, Input.GetAxis("Horizontal") * turnMultiplier);
 
 			// Now check the actions.
