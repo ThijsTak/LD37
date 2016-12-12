@@ -49,6 +49,8 @@ namespace Units
 		public Vector2 lightTimeFactor = new Vector2(0.01f, 0.7f);
 		public float lightTimer = 0.0f;
 
+		private int GrabFrame = -1;
+
 
 		Vector2 tractOffset = Vector2.zero;
 
@@ -247,6 +249,12 @@ namespace Units
 		/// </summary>
 		void ActivateGrab()
 		{
+			if (this.GrabFrame == Time.frameCount) {
+				return;
+			}
+
+
+
 			if (TractorSystem.Active)
 			{
 				Collectable coll = TractorSystem.Target.gameObject.GetComponent<Collectable>();
@@ -255,18 +263,25 @@ namespace Units
 					coll.Transporter = null;
 				}
 
+				if (TractorSystem.Target != null) {
+					this.GrabFrame = Time.frameCount;
+				}
+
 				TractorSystem.Target = null;
 				TractorSystem.Active = false;
+
 
 				return;
 			}
 
 			// Get all objects in range of the grabber.
 			Collider[] objects = Physics.OverlapSphere(transform.position, TractorSystem.Radius);
-			if (objects == null)
+			if (objects == null || objects.Length == 0)
 			{
 				return;
 			}
+
+			var rx_counter = 0;
 
 			foreach (Collider o in objects)
 			{
@@ -276,10 +291,16 @@ namespace Units
 					continue;
 				}
 
+				rx_counter++;
+
 				TractorSystem.Active = true;
 				TractorSystem.Target = drag.gameObject.transform;
 				TractorSystem.TracRigidbody = drag.gameObject.GetComponent<Rigidbody>();
 				drag.Transporter = gameObject;
+			}
+
+			if (rx_counter > 0) {
+				this.GrabFrame = Time.frameCount;
 			}
 		}
 
