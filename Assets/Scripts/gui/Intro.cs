@@ -41,7 +41,7 @@ public class Intro : MonoBehaviour {
 		index--;
 	}
 
-	void LoadGameplayScene ()
+	public void LoadGameplayScene ()
 	{
 		SceneManager.LoadScene(SceneHelper.Game);
 	}
