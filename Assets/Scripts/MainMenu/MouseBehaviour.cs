@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Helpers;
 using UnityEngine;
@@ -6,8 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class MouseBehaviour : MonoBehaviour {
 
-	public bool isStart;
-	public bool isQuit;
+	public ButtonType type;
+
+	public enum ButtonType
+	{
+		Static = 0,
+		Start = 1,
+		Quit = 2,
+		Main = 3
+	}
 
 	void Start()
 	{
@@ -26,13 +34,21 @@ public class MouseBehaviour : MonoBehaviour {
 
 	void OnMouseUp()
 	{
-		if (isStart)
+		switch (type)
 		{
-			SceneManager.LoadScene(SceneHelper.Intro);
-		}
-		else if (isQuit)
-		{
-			Application.Quit();
+			case ButtonType.Static:
+				return;
+			case ButtonType.Start:
+				SceneManager.LoadScene(SceneHelper.Intro);
+				return;
+			case ButtonType.Quit:
+				Application.Quit();
+				return;
+			case ButtonType.Main:
+				SceneManager.LoadScene(SceneHelper.MainMenu);
+				break;
+			default:
+				throw new ArgumentOutOfRangeException();
 		}
 	}
 }
