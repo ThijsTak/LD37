@@ -29,14 +29,24 @@ namespace Core
 
 		public void Awake()
 		{
-			Object.DontDestroyOnLoad(gameObject);
-
-			if (Instance != null)
+			if (Instance == null)
 			{
-				GameObject.Destroy(Instance);
+				DontDestroyOnLoad(gameObject);
+				Instance = this;
+			}
+			else if (Instance != this)
+			{
+				Destroy(gameObject);
 			}
 
-			Instance = this;
+			//Object.DontDestroyOnLoad(gameObject);
+
+			//if (Instance != null)
+			//{
+			//	GameObject.Destroy(Instance);
+			//}
+
+			//Instance = this;
 		}
 
 		void Update()
