@@ -2,12 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Core
 {
+
 	[Serializable]
-	public class StatCounter
+	public class StatCounter : MonoBehaviour
 	{
+		public static StatCounter Instance;
+
 		public float totalTime = 0.0f;
 		public int PandiCorns = 0;
 		public int Boosts = 0;
@@ -17,5 +22,18 @@ namespace Core
 		public float TotalEnergyCollected = 0;
 		public float TotalEnergyDrainedBase = 0.0f;
 		public float TotalEnergyDrainedPlayer = 0.0f;
+
+		public void Awake()
+		{
+			if (Instance == null)
+			{
+				DontDestroyOnLoad(gameObject);
+				Instance = this;
+			}
+			else if (Instance != this)
+			{
+				Destroy(gameObject);
+			}
+		}
 	}
 }

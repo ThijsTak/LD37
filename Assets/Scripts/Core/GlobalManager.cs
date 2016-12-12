@@ -20,7 +20,7 @@ namespace Core
 		public BasicSettings Settings = new BasicSettings();
 		List<Mule> mules = new List<Mule>(10);
 		List<Group> SpawnedGroups = new List<Group>(20);
-		public StatCounter StatCounter = new StatCounter();
+		public StatCounter statCounter = StatCounter.Instance;
 
 		public bool PlayerPickedUp = false;
 		public GameObject MulePrefab;
@@ -52,7 +52,7 @@ namespace Core
 				PlayerPickedUp = false;
 			}
 
-			StatCounter.totalTime += Time.deltaTime;
+			statCounter.totalTime += Time.deltaTime;
 
 			CheckForVictory();
 			CheckForDefeat();

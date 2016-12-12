@@ -27,7 +27,7 @@ namespace Behaviours
 				{
 					case Collectable.CollectableType.Energy:
 						GlobalManager.Instance.Home.AddEnergy(drag.EnergyValue);
-						GlobalManager.Instance.StatCounter.TotalEnergyCollected += drag.EnergyValue;
+						StatCounter.Instance.TotalEnergyCollected += drag.EnergyValue;
 						break;
 					case Collectable.CollectableType.Core:
 						GlobalManager.Instance.Home.EnergyCore = true;
@@ -53,16 +53,16 @@ namespace Behaviours
 						return;
 					case Collectable.CollectableType.Pandicorn:
 						GlobalManager.Instance.Home.TotalNumberOfPandiCorns++;
-						GlobalManager.Instance.StatCounter.PandiCorns++;
+						StatCounter.Instance.PandiCorns++;
 						break;
 					case Collectable.CollectableType.Mules:
 						GlobalManager.Instance.CreateMule();
-						GlobalManager.Instance.StatCounter.Mules++;
+						StatCounter.Instance.Mules++;
 						break;
 					case Collectable.CollectableType.EnergyIncrease:
 						GlobalManager.Instance.player.Energy.Max +=
 							GlobalManager.Instance.Settings.EnergyGainPerUpgrade;
-						GlobalManager.Instance.StatCounter.EnergyUp++;
+						StatCounter.Instance.EnergyUp++;
 						break;
 					case Collectable.CollectableType.Boost:
 						if (!GlobalManager.Instance.player.CanBoost)
@@ -74,12 +74,12 @@ namespace Behaviours
 							GlobalManager.Instance.player.BoostMulieplier +=
 								GlobalManager.Instance.Settings.BoostSpeedPerUpgrade;
 						}
-						GlobalManager.Instance.StatCounter.Boosts++;
+						StatCounter.Instance.Boosts++;
 						break;
 					case Collectable.CollectableType.Tractor:
 						GlobalManager.Instance.player.TractorSystem.Power +=
 							GlobalManager.Instance.Settings.TractorIncrease;
-						GlobalManager.Instance.StatCounter.Tractors++;
+						StatCounter.Instance.Tractors++;
 						break;
 				}
 

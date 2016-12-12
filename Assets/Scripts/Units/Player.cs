@@ -148,7 +148,7 @@ namespace Units
 
 			var drain = TotalEnergyDrain * Time.fixedDeltaTime;
 			Energy.ChangeValue(-drain);
-			GlobalManager.Instance.StatCounter.TotalEnergyDrainedPlayer += drain;
+			StatCounter.Instance.TotalEnergyDrainedPlayer += drain;
 		}
 
 		/// <summary>

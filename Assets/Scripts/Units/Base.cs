@@ -108,7 +108,7 @@ namespace Units
 
 			var energyDrained = (totalEnergyDrainPerMinute / 60) * Time.fixedDeltaTime;
 			DrainEnergy(energyDrained);
-			GlobalManager.Instance.StatCounter.TotalEnergyDrainedBase += energyDrained;
+			StatCounter.Instance.TotalEnergyDrainedBase += energyDrained;
 		}
 	}
 
