@@ -12,6 +12,14 @@ namespace Behaviours
 	{
 		public void OnTriggerStay(Collider collider)
 		{
+			var player = collider.GetComponent<Player>();
+			if (player != null)
+			{
+				var drain = GlobalManager.Instance.Home.RechanrgePlayerPerSecond * Time.deltaTime;
+				GlobalManager.Instance.Home.DrainEnergy(drain);
+				player.AddEnergy(drain);
+			}
+
 			Collectable drag = collider.gameObject.GetComponent<Collectable>();
 			if (drag != null && drag.Transporter == null)
 			{
@@ -38,6 +46,8 @@ namespace Behaviours
 					case Collectable.CollectableType.Deflector:
 						GlobalManager.Instance.Home.Deflector = true;
 						break;
+					case Collectable.CollectableType.Player:
+						return;
 				}
 
 				collider.gameObject.SendMessage("Death");
