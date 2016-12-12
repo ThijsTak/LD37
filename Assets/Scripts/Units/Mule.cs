@@ -24,9 +24,11 @@ namespace Units
 
 		public void Update()
 		{
+			// We are moving, make the mule face the right direction.
 			if (Body.velocity.x != 0 && Body.velocity.z != 0)
 			{
-				transform.rotation = Quaternion.LookRotation(new Vector3(Body.velocity.x, 0, Body.velocity.z));
+				var target_rot = Quaternion.LookRotation (new Vector3 (Body.velocity.x, 0, Body.velocity.z));
+				transform.rotation = Quaternion.RotateTowards(transform.rotation, target_rot, Time.deltaTime * GlobalManager.Instance.Settings.MuleRotationSpeed);
 			}
 
 			if (Body.velocity.x != 0 && Body.velocity.z != 0)
