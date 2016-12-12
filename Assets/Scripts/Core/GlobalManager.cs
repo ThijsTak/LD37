@@ -99,6 +99,17 @@ namespace Core
 			}
 		}
 
+		void CheckForVictory()
+		{
+			if (Home.GetShipComponentsState().Count(s => s.IsExisting) == 6)
+			{
+				// Ok, all components have been found.
+			}
+		}
 
+		void CheckForDefeat()
+		{
+			
+		}
 	}
 }

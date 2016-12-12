@@ -4,4 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/1...MainMenu.unity
+  - enabled: 1
+    path: Assets/Scenes/2...World.unity
+  - enabled: 1
+    path: Assets/Scenes/3...End.unity
+  - enabled: 1
+    path: Assets/Scenes/4...Victory.unity
+  - enabled: 1
+    path: Assets/Scenes/5...GameOver.unity
