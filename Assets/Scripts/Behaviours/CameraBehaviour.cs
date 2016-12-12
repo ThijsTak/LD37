@@ -12,6 +12,7 @@ namespace Assets.Scripts.Behaviours
 
 		public float ShoulderHeight = 1.5f;
 		public float ShoulderDistance = 2.5f;
+		public float CameraMultiplier = 1.333f;
 
 		public enum BehaviourType
 		{
@@ -57,7 +58,7 @@ namespace Assets.Scripts.Behaviours
 				new Vector3(0, ShoulderHeight, -ShoulderDistance)));
 			
 			// Set the position.
-			transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime);
+			transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * CameraMultiplier);
 
 			// Now set the lookat.
 			transform.LookAt(Target, Vector3.up);

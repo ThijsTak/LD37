@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 65514131549746898}
   m_Layer: 8
   m_Name: ComponentDeflector
-  m_TagString: Untagged
+  m_TagString: Components
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,4 +165,4 @@ MonoBehaviour:
   Transporter: {fileID: 0}
   DefaultDrag: 15
   EnergyValue: 10
-  Type: 4
+  Type: 6
