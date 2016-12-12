@@ -54,7 +54,7 @@ namespace Behaviours
 						GlobalManager.Instance.Home.TotalNumberOfPandiCorns++;
 						break;
 					case Collectable.CollectableType.Mules:
-
+						GlobalManager.Instance.CreateMule();
 						break;
 					case Collectable.CollectableType.EnergyIncrease:
 						GlobalManager.Instance.player.Energy.Max +=
