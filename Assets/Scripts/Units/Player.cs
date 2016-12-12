@@ -15,7 +15,7 @@ namespace Units
 	public class Player : BaseUnit
 	{
 		[SerializeField]
-		TractorSystem TractorSystem = new TractorSystem();
+		public TractorSystem TractorSystem = new TractorSystem();
 		[SerializeField]
 		private Weapon Stunner;
 		[SerializeField]
@@ -30,6 +30,8 @@ namespace Units
 		// Prefetched components.
 		public Rigidbody body;
 		private LineRenderer tractorLine;
+
+		Vector2 tractOffset = Vector2.zero;
 
 		/// <summary>
 		/// Initialize this instance.
@@ -70,7 +72,7 @@ namespace Units
 				{
 					transform.position = new Vector3(
 						transform.position.x,
-						HeightHelper.GetHeightFromTerrain(transform.position) -1.5f,
+						HeightHelper.GetHeightFromTerrain(transform.position) - 1.5f,
 						transform.position.z);
 				}
 				return;
@@ -246,8 +248,11 @@ namespace Units
 		void UpdateTractor()
 		{
 			tractorLine.enabled = TractorSystem.Active;
-			tractorLine.SetPosition(0, transform.position);
+			tractorLine.SetPosition(0, transform.position + Vector3.up);
 			tractorLine.SetPosition(1, TractorSystem.Target != null ? TractorSystem.Target.position : transform.position);
+
+			tractOffset = tractOffset + (Vector2.right * Time.deltaTime);
+			tractorLine.material.SetTextureOffset("_MainTex", tractOffset);
 
 			if (TractorSystem.Active)
 			{
