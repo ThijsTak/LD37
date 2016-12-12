@@ -15,11 +15,20 @@ namespace Behaviours
 		public float secondsBetweenSpawns = 60.0f;
 		public float maxDistanceOfPlayer = 0f;
 		public EnemyStateInfo.EnemyState DefaultState = EnemyStateInfo.EnemyState.Roaming;
+		public bool SpawnImidiate = false;
 
 		public float MaxRoamingRadius = 50.0f;
 
 		private float deltaTime = 0f;
 		List<Group> linkedGroups = new List<Group>();
+
+		void Start()
+		{
+			if (SpawnImidiate)
+			{
+				Spawn();
+			}
+		}
 
 		void FixedUpdate()
 		{
@@ -56,6 +65,13 @@ namespace Behaviours
 				return;
 			}
 
+			Spawn();
+
+			deltaTime = 0.0f;
+		}
+
+		void Spawn()
+		{
 			// Ok, spawn new monsters.
 			int number = (int)Random.Range(NumberPerGroup.x, NumberPerGroup.y);
 			Group group = new Group();
@@ -74,8 +90,6 @@ namespace Behaviours
 
 			// Ok, now assign the orders.
 			group.MassAssignOrders();
-
-			deltaTime = 0.0f;
 		}
 	}
 }
