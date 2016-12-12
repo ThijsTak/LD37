@@ -25,7 +25,10 @@ namespace Behaviours
 			Deflector,
 			Player,
 			FauxHybernation,
-			Pandicorn
+			Pandicorn,
+			Boost,
+			EnergyIncrease,
+			Mules
 		}
 
 		public void Start()
@@ -48,7 +51,7 @@ namespace Behaviours
 
 		public void FixedUpdate()
 		{
-			
+
 		}
 	}
 }
