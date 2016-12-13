@@ -1,0 +1,42 @@
+ - Basic player control
+   v Movement     (Keys) (WASD - ARROWS)
+   v Direction   (Mouse) (Movement)
+   - Action
+    v Stunner   (Mouse2) 
+	v Shooter   (Mouse1)
+	v Grab           (E)
+	- Order          (Q)
+  
+ - GameState
+  - Robot control
+  - Ship menu control
+  - Dialogs
+  
+ - Grabbable objects
+  v Grab script
+  v Dragging
+  ~ Weight/Speed reduction
+  v Grab beam
+ 
+  ~ Order system.
+   - Highlight items under the cursor.
+   v Perform order action.
+   v Add order to orders queue.
+   v Assign order to Mule
+   
+   
+
+ ~ Over the shoulder camera.
+ V Change movement of player to accell/rotate style.
+ - Add height fixer to all items.
+
+  ~~~
+  
+  - Create Spawner Logic
+  - Create Group Controller
+   - Create Group Behaviour Tree
+  - Create Individual creature orders
+   - Idle
+   - Move
+   - Attack
+   - Charge (Dogzilla)

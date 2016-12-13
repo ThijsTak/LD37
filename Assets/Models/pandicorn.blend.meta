@@ -1,0 +1,174 @@
+fileFormatVersion: 2
+guid: 80ca981a2966a0143a534499f552fd3b
+timeCreated: 1481374252
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Body
+    100002: Cone
+    100004: Cube
+    100006: Cube_001
+    100008: Cube_002
+    100010: Head
+    100012: //RootNode
+    100014: Pawn_FR
+    100016: Pawn_FR_001
+    100018: Pawn_FR_002
+    100020: Pawn_FR_003
+    100022: body
+    100024: cone
+    100026: ear-left
+    100028: ear-right
+    100030: head
+    100032: pawn-back-left
+    100034: pawn-back-right
+    100036: pawn-front-left
+    100038: pawn-front-right
+    400000: Body
+    400002: Cone
+    400004: Cube
+    400006: Cube_001
+    400008: Cube_002
+    400010: Head
+    400012: //RootNode
+    400014: Pawn_FR
+    400016: Pawn_FR_001
+    400018: Pawn_FR_002
+    400020: Pawn_FR_003
+    400022: body
+    400024: cone
+    400026: ear-left
+    400028: ear-right
+    400030: head
+    400032: pawn-back-left
+    400034: pawn-back-right
+    400036: pawn-front-left
+    400038: pawn-front-right
+    2300000: Body
+    2300002: Cone
+    2300004: Cube
+    2300006: Cube_001
+    2300008: Cube_002
+    2300010: Head
+    2300012: Pawn_FR
+    2300014: Pawn_FR_001
+    2300016: Pawn_FR_002
+    2300018: Pawn_FR_003
+    2300020: body
+    2300022: cone
+    2300024: ear-left
+    2300026: ear-right
+    2300028: head
+    2300030: pawn-back-left
+    2300032: pawn-back-right
+    2300034: pawn-front-left
+    2300036: pawn-front-right
+    3300000: Body
+    3300002: Cone
+    3300004: Cube
+    3300006: Cube_001
+    3300008: Cube_002
+    3300010: Head
+    3300012: Pawn_FR
+    3300014: Pawn_FR_001
+    3300016: Pawn_FR_002
+    3300018: Pawn_FR_003
+    3300020: body
+    3300022: cone
+    3300024: ear-left
+    3300026: ear-right
+    3300028: head
+    3300030: pawn-back-left
+    3300032: pawn-back-right
+    3300034: pawn-front-left
+    3300036: pawn-front-right
+    4300000: Cube_001
+    4300002: Cone
+    4300004: Cube
+    4300006: Head
+    4300008: Pawn_FR
+    4300010: Body
+    4300012: Pawn_FR_001
+    4300014: Pawn_FR_002
+    4300016: Pawn_FR_003
+    4300018: Cube_002
+    4300020: pawn-front-left
+    4300022: body
+    4300024: head
+    4300026: cone
+    4300028: ear-left
+    4300030: ear-right
+    4300032: pawn-front-right
+    4300034: pawn-back-left
+    4300036: pawn-back-right
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

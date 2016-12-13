@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Terrain
+  - Enemy
+  - Energy
+  - Base
+  - Components
+  - Mule
   layers:
   - Default
   - TransparentFX
@@ -13,19 +19,19 @@ TagManager:
   - UI
   - 
   - 
+  - InteractibleObjects
+  - StaticObjects
+  - 
+  - Enemies
+  - EnemyProjctiles
+  - 
+  - PlayerAllies
+  - PlayerProjectiles
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grabber
   - 
   - 
   - 
