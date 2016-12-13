@@ -8,7 +8,6 @@ using Units;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.VR.WSA.WebCam;
 
 namespace Core
 {
@@ -36,17 +35,11 @@ namespace Core
 
 		public void Awake()
 		{
-			// Object.DontDestroyOnLoad(gameObject);
-
-			// if (Instance != null)
-			// {
-			// 	GameObject.Destroy(Instance);
-			// }
-
 			Instance = this;
+			StatCounter.Instance.Reset();
 		}
 
-		void OnStart()
+		void Start()
 		{
 			switch (StatCounter.Instance.SelecteDifficulty)
 			{
@@ -56,7 +49,7 @@ namespace Core
 					CreateMule();
 					player.CanBoost = true;
 					player.TractorSystem.Power += Settings.TractorIncrease;
-					Radar.Categories.Single(r => r.Name == "Collectable").MaxDistance += 250;
+					// Radar.Categories.Single(r => r.Name == "Collectable").MaxDistance += 250;
 					break;
 				case StatCounter.Difficulty.Medium:
 					Home.Energy.Current = 5000;

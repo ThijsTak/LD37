@@ -7,7 +7,7 @@ namespace Core
 	[Serializable]
 	public class BasicSettings
 	{
-		[Header("Mule variables")]
+		// [Header("Mule variables")]
 		public float MuleFlyHeight = 10.0f;
 		public float MuleDescentSpeed = 2.0f;
 		public float MuleAscentSpeed = 2.0f;
@@ -17,7 +17,7 @@ namespace Core
 		public float MuleRotationSpeed  = 150.0f;
 		public float MuleFlightCorridorHeight = 5.0f;
 
-		[Header("Player variables")]
+		// [Header("Player variables")]
 		public float PlayerHoverHeight = 1.0f;
 		public float PlayerRadarRange = 100.0f;
 

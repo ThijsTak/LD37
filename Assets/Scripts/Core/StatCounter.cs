@@ -57,5 +57,24 @@ namespace Core
 				Destroy(gameObject);
 			}
 		}
+
+		public void Reset()
+		{
+			totalTime = 0;
+			PandiCorns = 0;
+			Boosts = 0;
+			Tractors = 0;
+			EnergyUp = 0;
+			Mules = 0;
+			TotalEnergyCollected = 0;
+			TotalEnergyDrainedBase = 0.0f;
+			TotalEnergyDrainedPlayer = 0.0f;
+			TotalEnergyGlobesCollected = 0;
+			TotalBoosts = 0;
+			TotalTractors = 0;
+			TotalEnergyUp = 0;
+			TotalMules = 0;
+			TotalPandas = 0;
+		}
 	}
 }
