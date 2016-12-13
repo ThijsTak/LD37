@@ -72,7 +72,7 @@ PlayerSettings:
   Prepare IOS For Recording: 0
   submitAnalytics: 1
   usePlayerLog: 1
-  bakeCollisionMeshes: 0
+  bakeCollisionMeshes: 1
   forceSingleInstance: 0
   resizableWindow: 0
   useMacAppStoreValidation: 0
@@ -120,7 +120,27 @@ PlayerSettings:
     Others: 1
   bundleIdentifier: com.Company.ProductName
   bundleVersion: 1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 102900000, guid: 939720edd57a39d498db134b28da0a1b, type: 3}
+  - {fileID: 1201478092107726, guid: 9dd66f17f7c9e48048550c23a4a6921f, type: 2}
+  - {fileID: 1877701765192170, guid: bd2df816b3bc38741b8bbfc92cf01ea5, type: 2}
+  - {fileID: 1982188346182406, guid: 36203c10d63d8364c92cc36428240fa0, type: 2}
+  - {fileID: 1132739634534232, guid: 7fe0bcca5bdda0a4fbf26ca54fa38e8e, type: 2}
+  - {fileID: 1563146603740698, guid: bf44e411f276be44596d6fed06c727f7, type: 2}
+  - {fileID: 1216715833133766, guid: e02815fb26d0dac4ab925cdeb23960be, type: 2}
+  - {fileID: 1467826700673844, guid: a7a264e3b1b1cc946bead9e901eb9626, type: 2}
+  - {fileID: 1190326133652482, guid: 9f337c4e277aa584ea457c706af8f6f2, type: 2}
+  - {fileID: 1656507277811776, guid: 884ebcda21f8a7d4d91e34957f05afbf, type: 2}
+  - {fileID: 1582155243010774, guid: 9e58838e0fbc4784bb0171ca8c93f748, type: 2}
+  - {fileID: 1855564451615730, guid: 236cce745818a46458a5e52cc7d1295a, type: 2}
+  - {fileID: 1470517547776230, guid: 438d2837f7ade004b83cfe3a38da711f, type: 2}
+  - {fileID: 1002439420057820, guid: 6fb5ef310fc779c4db2a8fe072a00a03, type: 2}
+  - {fileID: 1967606817491962, guid: 9de4f172ebfe9234b8ea06001ec54b60, type: 2}
+  - {fileID: 1460605816571732, guid: 871cc79a13bbd844ebb52e72ea4c5e1c, type: 2}
+  - {fileID: 1801519250977752, guid: 65db2f7e83f11ba48b40a6b9570cb129, type: 2}
+  - {fileID: 1374936744764472, guid: da5e73aa58c85be48b01f378378d9b72, type: 2}
+  - {fileID: 2100000, guid: 851026c6cbdb55749994716ecd04023e, type: 2}
+  - {fileID: 1194520622351832, guid: eff4a2085c492dc4497d1550bd9d47b3, type: 2}
   metroInputSource: 0
   m_HolographicPauseOnTrackingLoss: 1
   xboxOneDisableKinectGpuReservation: 0
@@ -138,8 +158,8 @@ PlayerSettings:
   ForceSDCardPermission: 0
   CreateWallpaper: 0
   APKExpansionFiles: 0
-  preloadShaders: 0
-  StripUnusedMeshComponents: 0
+  preloadShaders: 1
+  StripUnusedMeshComponents: 1
   VertexChannelCompressionMask:
     serializedVersion: 2
     m_Bits: 238
@@ -414,9 +434,9 @@ PlayerSettings:
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   spritePackerPolicy: 
-  webGLMemorySize: 256
+  webGLMemorySize: 950
   webGLExceptionSupport: 1
-  webGLDataCaching: 0
+  webGLDataCaching: 1
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 

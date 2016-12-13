@@ -2578,14 +2578,14 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 3
   m_TerrainData: {fileID: 15600000, guid: 1bd539bc3e3956b46b332d123bb2b13d, type: 2}
-  m_TreeDistance: 2000
-  m_TreeBillboardDistance: 500
+  m_TreeDistance: 125
+  m_TreeBillboardDistance: 150
   m_TreeCrossFadeLength: 5
-  m_TreeMaximumFullLODCount: 200
-  m_DetailObjectDistance: 250
+  m_TreeMaximumFullLODCount: 75
+  m_DetailObjectDistance: 100
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
-  m_SplatMapDistance: 1000
+  m_SplatMapDistance: 500
   m_HeightmapMaximumLOD: 0
   m_CastShadows: 1
   m_DrawHeightmap: 1
