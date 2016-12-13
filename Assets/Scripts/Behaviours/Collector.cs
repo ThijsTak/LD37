@@ -15,7 +15,7 @@ namespace Behaviours
 			var player = collider.GetComponent<Player>();
 			if (player != null && player.Energy.Current < player.GetMaxEnegy())
 			{
-				var drain = GlobalManager.Instance.Home.RechanrgePlayerPerSecond * Time.deltaTime;
+				var drain = GlobalManager.Instance.Home.RechanrgePlayerPerSecond * Time.deltaTime * (player.Energy.Max / 100);
 				GlobalManager.Instance.Home.DrainEnergy(drain);
 				player.AddEnergy(drain);
 			}

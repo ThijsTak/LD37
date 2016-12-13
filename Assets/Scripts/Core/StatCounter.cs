@@ -17,7 +17,16 @@ namespace Core
 		//	Instance = this;
 		//}
 
+		public enum Difficulty
+		{
+			Easy,
+			Medium,
+			Hard
+		}
+
 		public static StatCounter Instance;
+
+		public Difficulty SelecteDifficulty;
 
 		public float totalTime = 0.0f;
 		public int PandiCorns = 0;

@@ -52,6 +52,6 @@
    v Fix Spawner.
    ~~~~
    
-   - Fix display stat screen.
+   v Fix display stat screen.
    - Fix Level layout.
    - 

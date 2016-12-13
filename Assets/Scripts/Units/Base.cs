@@ -28,6 +28,8 @@ namespace Units
 		public float HybernationAdditionalDrainPerMinute = 50.0f;
 		public float EnergyPerMinutePerPandiCorn = 5.0f;
 
+		public float EnergeDrainIncreasePerMinute = 1.0f;
+
 		public int TotalNumberOfPandiCorns = 0;
 
 		public float totalEnergyDrainPerMinute;
@@ -43,10 +45,13 @@ namespace Units
 
 		public Transform MuleSpawn;
 
+		private float energyDrailPerSecondCalc;
+
 		void Start()
 		{
 			// Register the base.
 			GlobalManager.Instance.Home = this;
+			energyDrailPerSecondCalc = EnergeDrainIncreasePerMinute / 60;
 		}
 
 		void FixedUpdate()
@@ -109,6 +114,8 @@ namespace Units
 			var energyDrained = (totalEnergyDrainPerMinute / 60) * Time.fixedDeltaTime;
 			DrainEnergy(energyDrained);
 			StatCounter.Instance.TotalEnergyDrainedBase += energyDrained;
+
+			BaseEnegyDrainPerMinute += energyDrailPerSecondCalc * Time.fixedDeltaTime;
 		}
 	}
 

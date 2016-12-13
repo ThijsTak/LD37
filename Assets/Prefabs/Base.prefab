@@ -1127,13 +1127,14 @@ MonoBehaviour:
   EnergyCore: 0
   HybernationModule: 0
   RechanrgePlayerPerSecond: 25
-  BaseEnegyDrainPerMinute: 100
-  EngineAdditionalDrainPerMinute: 0
-  NavigationAdditionalDrainPerMinute: 10
-  DeflectorAdditionalDrainPerMinute: 15
-  EnergyCodeAdditionalDrainPerMinute: -50
-  HybernationAdditionalDrainPerMinute: 50
-  EnergyPerMinutePerPandiCorn: 5
+  BaseEnegyDrainPerMinute: 120
+  EngineAdditionalDrainPerMinute: -25
+  NavigationAdditionalDrainPerMinute: -50
+  DeflectorAdditionalDrainPerMinute: -50
+  EnergyCodeAdditionalDrainPerMinute: -100
+  HybernationAdditionalDrainPerMinute: -200
+  EnergyPerMinutePerPandiCorn: 10
+  EnergeDrainIncreasePerMinute: 1
   TotalNumberOfPandiCorns: 0
   totalEnergyDrainPerMinute: 0
   RoofShip: {fileID: 1461912350657374}

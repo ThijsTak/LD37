@@ -33,7 +33,7 @@ public class StatsManager : MonoBehaviour
 		{
 			case Stats.TotalTime:
 				var span = TimeSpan.FromSeconds(statsObject.totalTime);
-				GetComponent<TextMesh>().text += string.Format("{0} : {1} : {2}", span.Hours, span.Minutes, span.Seconds);
+				GetComponent<TextMesh>().text += string.Format("{0}:{1}:{2}", span.Hours, span.Minutes, span.Seconds);
 				break;
 			case Stats.Pandicorns:
 				GetComponent<TextMesh>().text += statsObject.PandiCorns + " of " + statsObject.TotalPandas;

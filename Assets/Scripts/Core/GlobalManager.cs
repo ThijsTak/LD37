@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Assets.Scripts.Core;
 using Behaviours;
@@ -7,6 +8,7 @@ using Units;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.VR.WSA.WebCam;
 
 namespace Core
 {
@@ -21,10 +23,12 @@ namespace Core
 		public BasicSettings Settings = new BasicSettings();
 		List<Mule> mules = new List<Mule>(10);
 		List<Group> SpawnedGroups = new List<Group>(20);
-		public StatCounter statCounter = StatCounter.Instance;
+		// public StatCounter statCounter = StatCounter.Instance;
 
 		public bool PlayerPickedUp = false;
 		public GameObject MulePrefab;
+
+		public RadarView Radar;
 
 		private bool isGameRunning = true;
 
@@ -32,14 +36,37 @@ namespace Core
 
 		public void Awake()
 		{
-			Object.DontDestroyOnLoad(gameObject);
+			// Object.DontDestroyOnLoad(gameObject);
 
-			if (Instance != null)
-			{
-				GameObject.Destroy(Instance);
-			}
+			// if (Instance != null)
+			// {
+			// 	GameObject.Destroy(Instance);
+			// }
 
 			Instance = this;
+		}
+
+		void OnStart()
+		{
+			switch (StatCounter.Instance.SelecteDifficulty)
+			{
+				case StatCounter.Difficulty.Easy:
+					Home.Energy.Current = 7500;
+
+					CreateMule();
+					player.CanBoost = true;
+					player.TractorSystem.Power += Settings.TractorIncrease;
+					Radar.Categories.Single(r => r.Name == "Collectable").MaxDistance += 250;
+					break;
+				case StatCounter.Difficulty.Medium:
+					Home.Energy.Current = 5000;
+					break;
+				case StatCounter.Difficulty.Hard:
+					Home.Energy.Current = 2500;
+					break;
+				default:
+					throw new ArgumentOutOfRangeException();
+			}
 		}
 
 		void Update()
@@ -55,7 +82,7 @@ namespace Core
 				PlayerPickedUp = false;
 			}
 
-			statCounter.totalTime += Time.deltaTime;
+			StatCounter.Instance.totalTime += Time.deltaTime;
 
 			if (player.Energy.Current == 0)
 			{

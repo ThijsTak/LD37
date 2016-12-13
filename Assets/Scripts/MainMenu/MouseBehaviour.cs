@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core;
 using Helpers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MouseBehaviour : MonoBehaviour {
+public class MouseBehaviour : MonoBehaviour
+{
 
 	public ButtonType type;
 
@@ -15,7 +17,10 @@ public class MouseBehaviour : MonoBehaviour {
 		Start = 1,
 		Quit = 2,
 		Main = 3,
-		Statistics = 4
+		Statistics = 4,
+		Easy = 5,
+		Medium = 6,
+		Hard = 7
 	}
 
 	void Start()
@@ -50,6 +55,18 @@ public class MouseBehaviour : MonoBehaviour {
 				break;
 			case ButtonType.Statistics:
 				SceneManager.LoadScene(SceneHelper.Statistics);
+				break;
+			case ButtonType.Easy:
+				StatCounter.Instance.SelecteDifficulty = StatCounter.Difficulty.Easy;
+				SceneManager.LoadScene(SceneHelper.Intro);
+				break;
+			case ButtonType.Medium:
+				StatCounter.Instance.SelecteDifficulty = StatCounter.Difficulty.Medium;
+				SceneManager.LoadScene(SceneHelper.Intro);
+				break;
+			case ButtonType.Hard:
+				StatCounter.Instance.SelecteDifficulty = StatCounter.Difficulty.Hard;
+				SceneManager.LoadScene(SceneHelper.Intro);
 				break;
 			default:
 				throw new ArgumentOutOfRangeException();

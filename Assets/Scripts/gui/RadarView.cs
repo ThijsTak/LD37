@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Behaviours;
+using Core;
 using UnityEngine;
 
 public class RadarView : MonoBehaviour
@@ -53,7 +54,7 @@ public class RadarView : MonoBehaviour
 
 				var coll = tagged_object.GetComponent<Collectable>();
 				bool alwaysShow = false;
-				if (coll != null)
+				if (coll != null && StatCounter.Instance.SelecteDifficulty != StatCounter.Difficulty.Hard)
 				{
 					alwaysShow = coll.IsTagged;
 				}
