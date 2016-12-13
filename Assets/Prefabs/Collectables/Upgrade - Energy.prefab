@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 54882707769504196}
   - component: {fileID: 114964351284690800}
   - component: {fileID: 114096639670131860}
+  - component: {fileID: 114694190961597098}
   m_Layer: 8
   m_Name: Upgrade - Energy
   m_TagString: Components
@@ -704,6 +705,7 @@ MonoBehaviour:
   DefaultDrag: 1
   EnergyValue: 10
   Type: 11
+  IsTagged: 0
   AutoRegister: 0
 --- !u!114 &114096639670131860
 MonoBehaviour:
@@ -732,6 +734,18 @@ MonoBehaviour:
   Parent: {fileID: 4879741556453946}
   RotateDirection: {x: 2, y: 0, z: 2}
   Speed: 300
+--- !u!114 &114694190961597098
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1173883000617324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d18cad93dd3924e990c1fc9b95b5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 1
 --- !u!114 &114788785641903652
 MonoBehaviour:
   m_ObjectHideFlags: 1

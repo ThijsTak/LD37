@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 54436357587665358}
   - component: {fileID: 114413130705593762}
   - component: {fileID: 114811675795156254}
+  - component: {fileID: 114550987763068444}
   m_Layer: 8
   m_Name: Upgrade - Boost
   m_TagString: Components
@@ -743,7 +744,20 @@ MonoBehaviour:
   DefaultDrag: 1
   EnergyValue: 10
   Type: 10
+  IsTagged: 0
   AutoRegister: 0
+--- !u!114 &114550987763068444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1142785353655284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d18cad93dd3924e990c1fc9b95b5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &114614873433714318
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -64,6 +64,7 @@ GameObject:
   - component: {fileID: 54586048608135636}
   - component: {fileID: 114961606393010650}
   - component: {fileID: 114721718976592540}
+  - component: {fileID: 114324155230511132}
   m_Layer: 8
   m_Name: Upgrade - Tractor
   m_TagString: Components
@@ -688,6 +689,18 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114324155230511132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1715300490977816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d18cad93dd3924e990c1fc9b95b5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
 --- !u!114 &114532089605990628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -704,6 +717,7 @@ MonoBehaviour:
   DefaultDrag: 1
   EnergyValue: 10
   Type: 13
+  IsTagged: 0
   AutoRegister: 0
 --- !u!114 &114569479536589028
 MonoBehaviour:

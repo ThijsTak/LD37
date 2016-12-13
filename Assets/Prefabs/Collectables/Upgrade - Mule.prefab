@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 54143989395556364}
   - component: {fileID: 114953949625669828}
   - component: {fileID: 114320240613746120}
+  - component: {fileID: 114365638551026792}
   m_Layer: 8
   m_Name: Upgrade - Mule
   m_TagString: Components
@@ -715,6 +716,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawn: {fileID: 1433473372874664, guid: d240f8eb785aeb04ba3cdcb9966ec987, type: 2}
   numberToSpawn: 1
+--- !u!114 &114365638551026792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1106622936778140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19d18cad93dd3924e990c1fc9b95b5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
 --- !u!114 &114401770044558772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -745,6 +758,7 @@ MonoBehaviour:
   DefaultDrag: 1
   EnergyValue: 10
   Type: 12
+  IsTagged: 0
   AutoRegister: 0
 --- !u!114 &114576024756703596
 MonoBehaviour:

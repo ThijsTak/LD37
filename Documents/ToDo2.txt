@@ -40,7 +40,7 @@
    
    Issues:
    v Autodrop collectables.
-   - Pickup noteification.
+   v Pickup noteification.
    - Attack of the dogzilla.
     - Mule pickip height.
    v Enemy respawn not working.
@@ -48,5 +48,10 @@
    v Track energy drain from weapon fire.
    V Boost while dragging.
    - Shoot ahead on space.
-   V Permanant ping of dragged objects.
-   V Fix Spawner.
+   v Permanant ping of dragged objects.
+   v Fix Spawner.
+   ~~~~
+   
+   - Fix display stat screen.
+   - Fix Level layout.
+   - 

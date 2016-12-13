@@ -749,4 +749,5 @@ MonoBehaviour:
   DefaultDrag: 1
   EnergyValue: 0
   Type: 9
+  IsTagged: 0
   AutoRegister: 1

@@ -34,6 +34,7 @@ namespace Behaviours
 				{
 					case Collectable.CollectableType.Energy:
 						GlobalManager.Instance.Home.AddEnergy(drag.EnergyValue);
+						StatCounter.Instance.TotalEnergyGlobesCollected++;
 						StatCounter.Instance.TotalEnergyCollected += drag.EnergyValue;
 						break;
 					case Collectable.CollectableType.Core:
