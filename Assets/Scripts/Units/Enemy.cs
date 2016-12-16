@@ -8,6 +8,7 @@ using Core;
 using Helpers;
 using Units;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace Units
 {
@@ -19,15 +20,18 @@ namespace Units
 		public Rigidbody body;
 
 		public Queue<BaseBehaviour> behaviour = new Queue<BaseBehaviour>();
+		public NavMeshAgent Agent;
 
 		void Start()
 		{
-			transform.position = new Vector3(
-				transform.position.x,
-				HeightHelper.GetHeightFromTerrain(transform.position),
-				transform.position.z);
+			//transform.position = new Vector3(
+			//	transform.position.x,
+			//	HeightHelper.GetHeightFromTerrain(transform.position),
+			//	transform.position.z);
 
 			body = GetComponent<Rigidbody>();
+
+			Agent = GetComponent<NavMeshAgent>();
 		}
 
 		void Update()

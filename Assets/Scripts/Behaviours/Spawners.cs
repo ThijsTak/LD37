@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Assets.Scripts.Core;
+using Assets.Scripts.Helpers;
 using Core;
 using Units;
 using UnityEngine;
@@ -83,7 +84,7 @@ namespace Behaviours
 			for (int i = 0; i < number; i++)
 			{
 				Vector3 offset = (Random.insideUnitSphere * radius) + Vector3.up * 20;
-				Enemy enemy = GameObject.Instantiate(BaseMonster, transform.position + offset, Quaternion.identity);
+				Enemy enemy = GameObject.Instantiate(BaseMonster, HeightHelper.HeightCorrect(transform.position + offset), Quaternion.identity);
 				group.Enemies.Add(enemy);
 				enemy.Group = group;
 			}

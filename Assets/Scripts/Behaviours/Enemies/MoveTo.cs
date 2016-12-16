@@ -16,6 +16,7 @@ namespace Behaviours.Enemies
 
 		public Vector3 Target;
 		public float _dist;
+		private bool MoveSet = false;
 		private float time;
 
 		#region Overrides of BaseBehaviour
@@ -25,22 +26,21 @@ namespace Behaviours.Enemies
 			float dist = Vector2.Distance(QuickConvert(Target), QuickConvert(enemy.gameObject.transform.position));
 			time -= Time.fixedDeltaTime;
 
-			if (time < 0)
-			{
-				return true;
-			}
-
 			// Are we there yet?
 			if (dist <= enemy.MovementSpeed) // * Time.fixedDeltaTime)
 			{
-				enemy.transform.position = HeightHelper.HeightCorrect(Target);
+				// enemy.transform.position = HeightHelper.HeightCorrect(Target);
 				return true;
 			}
 
-			// Move forward!!!! Dum. Dum. Dum. Dum, dumdum. Dum, dumdum.
-			// enemy.body.velocity = (Target - enemy.transform.position).normalized * enemy.MovementSpeed;
-			var x = (Target - enemy.transform.position);
-			enemy.MoveEnemy(new Vector3(x.x, 0, x.z).normalized);
+			if (!MoveSet)
+			{
+				enemy.Agent.SetDestination(Target);
+				MoveSet = true;
+			}
+
+			// enemy.Agent.set
+			// enemy.Agent.acceleration = enemy.MovementSpeed;
 			return false;
 		}
 
